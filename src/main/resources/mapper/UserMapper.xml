@@ -10,18 +10,39 @@
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="sex" jdbcType="INTEGER" property="sex" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
     <result column="email" jdbcType="VARCHAR" property="email" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
     <result column="headImg" jdbcType="VARCHAR" property="headimg" />
-    <result column="say" jdbcType="VARCHAR" property="say" />
-    <result column="state" jdbcType="INTEGER" property="state" />
-    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
   </resultMap>
-  <update id="updateUserState">
-		update user set state=#{state} where id=#{id}
+  <update id="updateType">
+    update user set type = #{userType} where id = #{userId}
   </update>
+
+  <update id="updateStatus">
+    update user set status = #{status} where id = #{userId}
+  </update>
+
+  <update id="updatePassword">
+    update user set password = #{newPassword} where id = #{userID}
+  </update>
+
+  <delete id="deleteUser">
+    delete from user where id = #{userID}
+  </delete>
+
   <select id="checkUser" resultType="com.aokai.parking.po.User">
     select * from user where username = #{username} and password = #{password}
+  </select>
+
+  <select id="checkUserName" resultType="com.aokai.parking.po.User">
+    select * from user where username = #{username}
+  </select>
+
+  <select id="checkPassword" resultType="java.lang.String">
+    select password from user where id = #{userID}
   </select>
 </mapper>

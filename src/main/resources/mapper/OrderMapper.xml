@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aokai.parking.dao.OrderMapper">
+  <resultMap id="BaseResultMap" type="com.aokai.parking.po.Order">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="carNumber" jdbcType="VARCHAR" property="carnumber" />
+    <result column="customerName" jdbcType="VARCHAR" property="customername" />
+    <result column="customerPhone" jdbcType="VARCHAR" property="customerphone" />
+    <result column="startTime" jdbcType="TIMESTAMP" property="starttime" />
+    <result column="endTime" jdbcType="TIMESTAMP" property="endtime" />
+    <result column="cost" jdbcType="DOUBLE" property="cost" />
+    <result column="time" jdbcType="DOUBLE" property="time" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="garage_id" jdbcType="INTEGER" property="garageId" />
+    <result column="car_id" jdbcType="INTEGER" property="carId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+  </resultMap>
+</mapper>

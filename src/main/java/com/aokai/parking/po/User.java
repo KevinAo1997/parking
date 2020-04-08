@@ -4,197 +4,281 @@ import javax.persistence.*;
 
 @Table(name = "user")
 public class User {
+    /**
+     * 主键
+     */
     @Id
     private Integer id;
 
+    /**
+     * 工号
+     */
     private String code;
 
+    /**
+     * 账号
+     */
     private String username;
 
+    /**
+     * 密码
+     */
     private String password;
 
+    /**
+     * 名称
+     */
     private String name;
 
-    private Integer sex;
+    /**
+     * 性别
+     */
+    private String sex;
 
+    /**
+     * 邮箱
+     */
     private String email;
 
+    /**
+     * 电话
+     */
     private String phone;
 
+    /**
+     * 头像
+     */
     @Column(name = "headImg")
     private String headimg;
 
-    private String say;
-
-    private Integer state;
-
-    private Integer type;
+    /**
+     * 签名描述
+     */
+    private String description;
 
     /**
-     * @return id
+     * 状态：0禁用、1启用
+     */
+    private Integer status;
+
+    /**
+     * 员工类型：管理员、普通员工
+     */
+    private String type;
+
+    /**
+     * 获取主键
+     *
+     * @return id - 主键
      */
     public Integer getId() {
         return id;
     }
 
     /**
-     * @param id
+     * 设置主键
+     *
+     * @param id 主键
      */
     public void setId(Integer id) {
         this.id = id;
     }
 
     /**
-     * @return code
+     * 获取工号
+     *
+     * @return code - 工号
      */
     public String getCode() {
         return code;
     }
 
     /**
-     * @param code
+     * 设置工号
+     *
+     * @param code 工号
      */
     public void setCode(String code) {
         this.code = code == null ? null : code.trim();
     }
 
     /**
-     * @return username
+     * 获取账号
+     *
+     * @return username - 账号
      */
     public String getUsername() {
         return username;
     }
 
     /**
-     * @param username
+     * 设置账号
+     *
+     * @param username 账号
      */
     public void setUsername(String username) {
         this.username = username == null ? null : username.trim();
     }
 
     /**
-     * @return password
+     * 获取密码
+     *
+     * @return password - 密码
      */
     public String getPassword() {
         return password;
     }
 
     /**
-     * @param password
+     * 设置密码
+     *
+     * @param password 密码
      */
     public void setPassword(String password) {
         this.password = password == null ? null : password.trim();
     }
 
     /**
-     * @return name
+     * 获取名称
+     *
+     * @return name - 名称
      */
     public String getName() {
         return name;
     }
 
     /**
-     * @param name
+     * 设置名称
+     *
+     * @param name 名称
      */
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
     }
 
     /**
-     * @return sex
+     * 获取性别
+     *
+     * @return sex - 性别
      */
-    public Integer getSex() {
+    public String getSex() {
         return sex;
     }
 
     /**
-     * @param sex
+     * 设置性别
+     *
+     * @param sex 性别
      */
-    public void setSex(Integer sex) {
-        this.sex = sex;
+    public void setSex(String sex) {
+        this.sex = sex == null ? null : sex.trim();
     }
 
     /**
-     * @return email
+     * 获取邮箱
+     *
+     * @return email - 邮箱
      */
     public String getEmail() {
         return email;
     }
 
     /**
-     * @param email
+     * 设置邮箱
+     *
+     * @param email 邮箱
      */
     public void setEmail(String email) {
         this.email = email == null ? null : email.trim();
     }
 
     /**
-     * @return phone
+     * 获取电话
+     *
+     * @return phone - 电话
      */
     public String getPhone() {
         return phone;
     }
 
     /**
-     * @param phone
+     * 设置电话
+     *
+     * @param phone 电话
      */
     public void setPhone(String phone) {
         this.phone = phone == null ? null : phone.trim();
     }
 
     /**
-     * @return headImg
+     * 获取头像
+     *
+     * @return headImg - 头像
      */
     public String getHeadimg() {
         return headimg;
     }
 
     /**
-     * @param headimg
+     * 设置头像
+     *
+     * @param headimg 头像
      */
     public void setHeadimg(String headimg) {
         this.headimg = headimg == null ? null : headimg.trim();
     }
 
     /**
-     * @return say
+     * 获取签名描述
+     *
+     * @return description - 签名描述
      */
-    public String getSay() {
-        return say;
+    public String getDescription() {
+        return description;
     }
 
     /**
-     * @param say
+     * 设置签名描述
+     *
+     * @param description 签名描述
      */
-    public void setSay(String say) {
-        this.say = say == null ? null : say.trim();
+    public void setDescription(String description) {
+        this.description = description == null ? null : description.trim();
     }
 
     /**
-     * @return state
+     * 获取状态：0禁用、1启用
+     *
+     * @return status - 状态：0禁用、1启用
      */
-    public Integer getState() {
-        return state;
+    public Integer getStatus() {
+        return status;
     }
 
     /**
-     * @param state
+     * 设置状态：0禁用、1启用
+     *
+     * @param status 状态：0禁用、1启用
      */
-    public void setState(Integer state) {
-        this.state = state;
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     /**
-     * @return type
+     * 获取员工类型：0管理员、1普通员工
+     *
+     * @return type - 员工类型：0管理员、1普通员工
      */
-    public Integer getType() {
+    public String getType() {
         return type;
     }
 
     /**
-     * @param type
+     * 设置员工类型：管理员、普通员工
+     *
+     * @param type 员工类型：管理员、普通员工
      */
-    public void setType(Integer type) {
+    public void setType(String type) {
         this.type = type;
     }
 }

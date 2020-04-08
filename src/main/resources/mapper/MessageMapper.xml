@@ -8,7 +8,7 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="creatTime" jdbcType="TIMESTAMP" property="creattime" />
-    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
   </resultMap>
 </mapper>

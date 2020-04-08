@@ -113,5 +113,12 @@
       <!--是否使用实际列名,默认为false-->
       <!--<property name="useActualColumnNames" value="false" />-->
     </table>
+
+    <table schema="" tableName="order" domainObjectName="Order"
+      enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+      enableUpdateByExample="false" selectByExampleQueryId="false">
+      <!--是否使用实际列名,默认为false-->
+      <!--<property name="useActualColumnNames" value="false" />-->
+    </table>
   </context>
 </generatorConfiguration>

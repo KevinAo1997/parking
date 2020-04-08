@@ -5,83 +5,119 @@ import javax.persistence.*;
 
 @Table(name = "message")
 public class Message {
+    /**
+     * 主键
+     */
     @Id
     private Integer id;
 
+    /**
+     * 标题
+     */
     private String title;
 
+    /**
+     * 创建时间
+     */
     @Column(name = "creatTime")
     private Date creattime;
 
-    private Integer uid;
+    /**
+     * 用户ID
+     */
+    @Column(name = "user_id")
+    private Integer userId;
 
+    /**
+     * 内容
+     */
     private String content;
 
     /**
-     * @return id
+     * 获取主键
+     *
+     * @return id - 主键
      */
     public Integer getId() {
         return id;
     }
 
     /**
-     * @param id
+     * 设置主键
+     *
+     * @param id 主键
      */
     public void setId(Integer id) {
         this.id = id;
     }
 
     /**
-     * @return title
+     * 获取标题
+     *
+     * @return title - 标题
      */
     public String getTitle() {
         return title;
     }
 
     /**
-     * @param title
+     * 设置标题
+     *
+     * @param title 标题
      */
     public void setTitle(String title) {
         this.title = title == null ? null : title.trim();
     }
 
     /**
-     * @return creatTime
+     * 获取创建时间
+     *
+     * @return creatTime - 创建时间
      */
     public Date getCreattime() {
         return creattime;
     }
 
     /**
-     * @param creattime
+     * 设置创建时间
+     *
+     * @param creattime 创建时间
      */
     public void setCreattime(Date creattime) {
         this.creattime = creattime;
     }
 
     /**
-     * @return uid
+     * 获取用户ID
+     *
+     * @return user_id - 用户ID
      */
-    public Integer getUid() {
-        return uid;
+    public Integer getUserId() {
+        return userId;
     }
 
     /**
-     * @param uid
+     * 设置用户ID
+     *
+     * @param userId 用户ID
      */
-    public void setUid(Integer uid) {
-        this.uid = uid;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     /**
-     * @return content
+     * 获取内容
+     *
+     * @return content - 内容
      */
     public String getContent() {
         return content;
     }
 
     /**
-     * @param content
+     * 设置内容
+     *
+     * @param content 内容
      */
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
