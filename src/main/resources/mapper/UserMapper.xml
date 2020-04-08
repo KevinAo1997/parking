@@ -21,4 +21,7 @@
   <update id="updateUserState">
 		update user set state=#{state} where id=#{id}
   </update>
+  <select id="checkUser" resultType="com.aokai.parking.po.User">
+    select * from user where username = #{username} and password = #{password}
+  </select>
 </mapper>

@@ -1,5 +1,8 @@
 package com.aokai.parking.service;
 
+import com.aokai.parking.model.qo.UserReq;
+import com.aokai.parking.po.User;
+
 /**
  * Description :   .
  *
@@ -9,4 +12,11 @@ package com.aokai.parking.service;
 public interface UserService {
 
     Integer updateUserState(Integer state, Integer id);
+
+    /**
+     * 获取用户账号信息
+     * @param userReq
+     * @return
+     */
+    User checkUser(UserReq userReq);
 }

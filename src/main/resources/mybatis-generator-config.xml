@@ -95,25 +95,18 @@
       <!--是否使用实际列名,默认为false-->
       <!--<property name="useActualColumnNames" value="false" />-->
     </table>
-    <table schema="" tableName="carorder" domainObjectName="Carorder"
+    <table schema="" tableName="car" domainObjectName="Car"
       enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
       enableUpdateByExample="false" selectByExampleQueryId="false">
       <!--是否使用实际列名,默认为false-->
       <!--<property name="useActualColumnNames" value="false" />-->
     </table>
-    <table schema="" tableName="carspace" domainObjectName="Carspace"
+    <table schema="" tableName="garage" domainObjectName="Garage"
       enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
       enableUpdateByExample="false" selectByExampleQueryId="false">
       <!--是否使用实际列名,默认为false-->
       <!--<property name="useActualColumnNames" value="false" />-->
     </table>
-    <table schema="" tableName="carstation" domainObjectName="Carstation"
-      enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-      enableUpdateByExample="false" selectByExampleQueryId="false">
-      <!--是否使用实际列名,默认为false-->
-      <!--<property name="useActualColumnNames" value="false" />-->
-    </table>
-
     <table schema="" tableName="message" domainObjectName="Message"
       enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
       enableUpdateByExample="false" selectByExampleQueryId="false">
