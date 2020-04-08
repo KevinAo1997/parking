@@ -5,6 +5,7 @@ import com.aokai.parking.model.qo.UpdateUserReq;
 import com.aokai.parking.model.qo.UpdateUserTypeReq;
 import com.aokai.parking.model.qo.UserReq;
 import com.aokai.parking.po.User;
+import java.util.List;
 
 /**
  * Description :   .
@@ -79,4 +80,11 @@ public interface UserService {
      * @return
      */
     Boolean updatePassword(Integer userID, String newPassword);
+
+    /**
+     * 获取用户列表
+     * @return
+     */
+    List<User> getUserList();
+
 }

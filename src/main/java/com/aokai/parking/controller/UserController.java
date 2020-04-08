@@ -2,6 +2,7 @@ package com.aokai.parking.controller;
 
 import com.aokai.parking.enums.ApplicationEnum;
 import com.aokai.parking.model.qo.InsertUserReq;
+import com.aokai.parking.model.qo.PageReq;
 import com.aokai.parking.model.qo.UpdateUserReq;
 import com.aokai.parking.model.qo.UpdateUserTypeReq;
 import com.aokai.parking.model.qo.UserReq;
@@ -11,6 +12,10 @@ import com.aokai.parking.model.vo.result.SuccessResult;
 import com.aokai.parking.po.User;
 import com.aokai.parking.service.UserService;
 import com.aokai.parking.utils.TokenUtil;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import java.util.List;
+import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -159,6 +164,26 @@ public class UserController {
             }
         }
         return new FailResult<>();
+    }
+
+
+    /**
+     * 分页获取用户列表
+     * @param pageReq
+     * @return
+     */
+    @RequestMapping(value = "/getUserList", method = RequestMethod.POST)
+    @ResponseBody
+    public Result getUserList(@RequestBody @Validated PageReq pageReq) {
+        // 获取用户列表
+        List<User> userList = userService.getUserList();
+        if (CollectionUtils.isEmpty(userList)) {
+            return new FailResult<>();
+        }
+        // 分页获取
+        PageHelper.startPage(pageReq.getPageNum(), pageReq.getPageSize());
+        PageInfo<User> userPageInfo = new PageInfo<>(userList);
+        return new SuccessResult<>(userPageInfo);
     }
 
 

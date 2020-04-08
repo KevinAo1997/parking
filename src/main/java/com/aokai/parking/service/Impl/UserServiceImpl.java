@@ -9,6 +9,7 @@ import com.aokai.parking.model.qo.UserReq;
 import com.aokai.parking.po.User;
 import com.aokai.parking.service.UserService;
 import com.aokai.parking.utils.MD5Util;
+import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -133,5 +134,10 @@ public class UserServiceImpl implements UserService {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public List<User> getUserList() {
+        return userMapper.selectAll();
     }
 }

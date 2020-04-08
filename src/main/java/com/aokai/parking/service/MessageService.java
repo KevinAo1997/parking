@@ -1,0 +1,26 @@
+package com.aokai.parking.service;
+
+import com.aokai.parking.model.qo.InsertMessageReq;
+
+/**
+ * Description :   .
+ *
+ * @author : aokai
+ * @date : Created in 2020/4/8 23:47
+ */
+public interface MessageService {
+
+    /**
+     * 新增公告
+     * @param insertMessageReq
+     * @return
+     */
+    Boolean insertMessage(InsertMessageReq insertMessageReq);
+
+    /**
+     * 删除公告
+     * @param messageId
+     * @return
+     */
+    Boolean deleteMessage(Integer messageId);
+}
