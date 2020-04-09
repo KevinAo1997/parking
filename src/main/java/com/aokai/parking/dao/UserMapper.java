@@ -1,6 +1,7 @@
 package com.aokai.parking.dao;
 
 import com.aokai.parking.po.User;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.Mapper;
@@ -60,4 +61,11 @@ public interface UserMapper extends Mapper<User> {
      * @return
      */
     Integer updatePassword(@Param("userID") Integer userID, @Param("newPassword") String newPassword);
+
+    /**
+     * 根据用户IDS获取用户
+     * @param userIds
+     * @return
+     */
+    List<User> selectUserByUserIds(@Param("userIds") List<Integer> userIds);
 }

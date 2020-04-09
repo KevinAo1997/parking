@@ -3,10 +3,12 @@ package com.aokai.parking.controller;
 import com.aokai.parking.model.qo.InsertMessageReq;
 import com.aokai.parking.model.qo.PageReq;
 import com.aokai.parking.model.qo.UpdateUserReq;
+import com.aokai.parking.model.vo.MessageListResp;
 import com.aokai.parking.model.vo.result.FailResult;
 import com.aokai.parking.model.vo.result.Result;
 import com.aokai.parking.model.vo.result.SuccessResult;
 import com.aokai.parking.service.MessageService;
+import java.util.List;
 import javax.xml.ws.ResponseWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -62,15 +64,16 @@ public class MessageController {
         return new FailResult<>();
     }
 
-//    @RequestMapping(value = "/getMessageList", method = RequestMethod.POST)
-//    @ResponseBody
-//    public Result getMessageList(@RequestBody @Validated PageReq pageReq) {
-//        // 删除公告
-//        Boolean isDeleteMessage = messageService.getMessageList(messageId);
-//        if (isDeleteMessage) {
-//            return new SuccessResult<>();
-//        }
-//        return new FailResult<>();
-//    }
+    /**
+     * 获取公告列表
+     * @return
+     */
+    @RequestMapping(value = "/getMessageList", method = RequestMethod.POST)
+    @ResponseBody
+    public Result getMessageList() {
+        // 获取公告列表
+        MessageListResp messageListResp = messageService.getMessageList();
+        return new SuccessResult<>(messageListResp);
+    }
 
 }
