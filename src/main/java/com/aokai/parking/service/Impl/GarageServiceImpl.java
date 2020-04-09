@@ -48,10 +48,7 @@ public class GarageServiceImpl implements GarageService {
     public Boolean deleteGarage(Integer garageId) {
         // 删除车库
         Integer delete = garageMapper.deleteByPrimaryKey(garageId);
-        if (delete > 0) {
-            return true;
-        }
-        return false;
+        return delete > 0;
     }
 
     @Override
@@ -60,20 +57,14 @@ public class GarageServiceImpl implements GarageService {
         Garage garage = new Garage();
         BeanUtils.copyProperties(updateGarageReq, garage);
         Integer update = garageMapper.updateByPrimaryKey(garage);
-        if (update > 0) {
-            return true;
-        }
-        return false;
+        return update > 0;
     }
 
     @Override
     public Boolean checkGarageName(String garageName) {
         // 检查车库名称是否存在
         Garage garage = garageMapper.checkGarageName(garageName);
-        if (garage == null) {
-            return false;
-        }
-        return true;
+        return garage != null;
     }
 
     @Override
@@ -82,9 +73,6 @@ public class GarageServiceImpl implements GarageService {
         BeanUtils.copyProperties(insertGarageReq, garage);
         // 新增车库信息
         Integer insert = garageMapper.insert(garage);
-        if (insert > 0) {
-            return true;
-        }
-        return false;
+        return insert > 0;
     }
 }

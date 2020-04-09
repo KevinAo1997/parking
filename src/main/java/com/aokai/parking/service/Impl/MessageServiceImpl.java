@@ -49,20 +49,14 @@ public class MessageServiceImpl implements MessageService {
 
         // 新增公告
         Integer insertMessage = messageMapper.insert(message);
-        if (insertMessage > 0) {
-            return true;
-        }
-        return false;
+        return insertMessage > 0;
     }
 
     @Override
     public Boolean deleteMessage(Integer messageId) {
         // 删除公告
         Integer isDeleteMessage = messageMapper.deleteByPrimaryKey(messageId);
-        if (isDeleteMessage > 0) {
-            return true;
-        }
-        return false;
+        return isDeleteMessage > 0;
     }
 
     @Override

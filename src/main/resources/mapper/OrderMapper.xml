@@ -19,4 +19,7 @@
     <result column="car_id" jdbcType="INTEGER" property="carId" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
   </resultMap>
+  <select id="getTodayOrderList" resultType="com.aokai.parking.po.Order">
+    select * from order where endTime &lt; #{endTime} and endTime &gt; #{startTime}
+  </select>
 </mapper>

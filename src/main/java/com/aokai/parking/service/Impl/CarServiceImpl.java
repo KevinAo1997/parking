@@ -39,10 +39,7 @@ public class CarServiceImpl implements CarService {
     public Boolean checkCarName(String carName, Integer garageId) {
         // 检查车位名称是否存在
         Car car = carMapper.checkCarName(carName, garageId);
-        if (car == null) {
-            return false;
-        }
-        return true;
+        return car != null;
     }
 
     @Override
@@ -51,10 +48,7 @@ public class CarServiceImpl implements CarService {
         BeanUtils.copyProperties(insertCarReq, car);
         // 新增车位
         Integer insert = carMapper.insert(car);
-        if (insert > 0) {
-            return true;
-        }
-        return false;
+        return insert > 0;
     }
 
     @Override
@@ -63,10 +57,7 @@ public class CarServiceImpl implements CarService {
         BeanUtils.copyProperties(updateCarReq, car);
         // 更新车位信息
         Integer updateCar = carMapper.updateByPrimaryKey(car);
-        if (updateCar > 0) {
-            return true;
-        }
-        return false;
+        return updateCar > 0;
     }
 
     @Override
@@ -79,9 +70,6 @@ public class CarServiceImpl implements CarService {
     public Boolean deleteCar(Integer carId) {
         // 删除车位信息
         Integer delete = carMapper.deleteCar(carId);
-        if (delete > 0) {
-            return true;
-        }
-        return false;
+        return delete > 0;
     }
 }

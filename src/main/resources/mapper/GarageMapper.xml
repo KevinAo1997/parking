@@ -15,6 +15,6 @@
     <result column="garage_pricetime" jdbcType="DOUBLE" property="garagePricetime" />
   </resultMap>
   <select id="checkGarageName" resultType="com.aokai.parking.po.Garage">
-    select * from garage where garageName = #{garageName}
+    select * from garage where garage_name = #{garageName}
   </select>
 </mapper>

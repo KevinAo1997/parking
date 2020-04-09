@@ -42,40 +42,28 @@ public class UserServiceImpl implements UserService {
 
         // 更改用户权限类型
         Integer update = userMapper.updateType(userType, userId);
-        if (update > 0) {
-            return true;
-        }
-        return false;
+        return update > 0;
     }
 
     @Override
     public Boolean updateStatus(Integer userID, Integer status) {
         // 更改用户状态
         Integer update = userMapper.updateStatus(userID, status);
-        if (update > 0) {
-            return true;
-        }
-        return false;
+        return update > 0;
     }
 
     @Override
     public Boolean deleteUser(Integer userID) {
         // 删除用户
         Integer delete = userMapper.deleteUser(userID);
-        if (delete > 0) {
-            return true;
-        }
-        return false;
+        return delete > 0;
     }
 
     @Override
     public Boolean checkUserName(String username) {
         // 判断用户名是否存在
         User user = userMapper.checkUserName(username);
-        if (user == null) {
-            return false;
-        }
-        return true;
+        return user != null;
     }
 
     @Override
@@ -94,10 +82,7 @@ public class UserServiceImpl implements UserService {
 
         // 新增用户
         Integer insertUer = userMapper.insert(user);
-        if (insertUer > 0) {
-            return true;
-        }
-        return false;
+        return insertUer > 0;
     }
 
     @Override
@@ -110,30 +95,21 @@ public class UserServiceImpl implements UserService {
         user.setPhone(updateUserReq.getPhone());
 
         Integer updateUser = userMapper.updateByPrimaryKey(user);
-        if (updateUser > 0) {
-            return true;
-        }
-        return false;
+        return updateUser > 0;
     }
 
     @Override
     public Boolean checkPassword(Integer userID, String oldPassword) {
         // 查询用户密码
         String userPassword = userMapper.checkPassword(userID);
-        if (userPassword == null || !userPassword.equals(MD5Util.string2MD5(oldPassword))) {
-            return false;
-        }
-        return true;
+        return userPassword != null && userPassword.equals(MD5Util.string2MD5(oldPassword));
     }
 
     @Override
     public Boolean updatePassword(Integer userID, String newPassword) {
         // 修改用户密码
         Integer updatePassword = userMapper.updatePassword(userID, newPassword);
-        if (updatePassword > 0) {
-            return true;
-        }
-        return false;
+        return updatePassword > 0;
     }
 
     @Override
