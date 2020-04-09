@@ -3,6 +3,7 @@ package com.aokai.parking.controller;
 import com.aokai.parking.enums.ApplicationEnum;
 import com.aokai.parking.model.qo.InsertUserReq;
 import com.aokai.parking.model.qo.PageReq;
+import com.aokai.parking.model.qo.UpdatePasswordReq;
 import com.aokai.parking.model.qo.UpdateUserReq;
 import com.aokai.parking.model.qo.UpdateUserTypeReq;
 import com.aokai.parking.model.qo.UserReq;
@@ -150,19 +151,17 @@ public class UserController {
 
     /**
      * 修改密码
-     * @param userId
-     * @param oldPassword
-     * @param newPassword
+     * @param updatePasswordReq
      * @return
      */
     @RequestMapping(value = "/updatePassword", method = RequestMethod.POST)
     @ResponseBody
-    public Result updatePassword(@RequestBody @Validated  Integer userId, String oldPassword, String newPassword) {
+    public Result updatePassword(@RequestBody @Validated UpdatePasswordReq updatePasswordReq) {
         // 检查用户密码
-        Boolean isUserPassword = userService.checkPassword(userId, oldPassword);
+        Boolean isUserPassword = userService.checkPassword(updatePasswordReq.getUserId(), updatePasswordReq.getOldPassword());
         if (isUserPassword) {
             // 修改密码
-            Boolean isUpdatePassword = userService.updatePassword(userId, newPassword);
+            Boolean isUpdatePassword = userService.updatePassword(updatePasswordReq.getUserId(), updatePasswordReq.getNewPassword());
             if (isUpdatePassword) {
                 return new SuccessResult<>();
             }
