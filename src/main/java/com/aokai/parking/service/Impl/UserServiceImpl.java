@@ -95,16 +95,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Boolean checkPassword(Integer userID, String oldPassword) {
+    public Boolean checkPassword(Integer userId, String oldPassword) {
         // 查询用户密码
-        String userPassword = userMapper.checkPassword(userID);
+        String userPassword = userMapper.checkPassword(userId);
         return userPassword != null && userPassword.equals(MD5Util.string2MD5(oldPassword));
     }
 
     @Override
-    public Boolean updatePassword(Integer userID, String newPassword) {
+    public Boolean updatePassword(Integer userId, String newPassword) {
         // 修改用户密码
-        Integer updatePassword = userMapper.updatePassword(userID, newPassword);
+        Integer updatePassword = userMapper.updatePassword(userId, MD5Util.string2MD5(newPassword));
         return updatePassword > 0;
     }
 

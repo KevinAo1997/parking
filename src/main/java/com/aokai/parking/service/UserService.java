@@ -67,19 +67,19 @@ public interface UserService {
 
     /**
      * 检查用户密码
-     * @param userID
+     * @param userId
      * @param oldPassword
      * @return
      */
-    Boolean checkPassword(Integer userID, String oldPassword);
+    Boolean checkPassword(Integer userId, String oldPassword);
 
     /**
      * 修改用户密码
-     * @param userID
+     * @param userId
      * @param newPassword
      * @return
      */
-    Boolean updatePassword(Integer userID, String newPassword);
+    Boolean updatePassword(Integer userId, String newPassword);
 
     /**
      * 获取用户列表

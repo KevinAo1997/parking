@@ -150,19 +150,19 @@ public class UserController {
 
     /**
      * 修改密码
-     * @param userID
+     * @param userId
      * @param oldPassword
      * @param newPassword
      * @return
      */
     @RequestMapping(value = "/updatePassword", method = RequestMethod.POST)
     @ResponseBody
-    public Result updatePassword(@RequestBody @Validated  Integer userID, String oldPassword, String newPassword) {
+    public Result updatePassword(@RequestBody @Validated  Integer userId, String oldPassword, String newPassword) {
         // 检查用户密码
-        Boolean isUserPassword = userService.checkPassword(userID, oldPassword);
+        Boolean isUserPassword = userService.checkPassword(userId, oldPassword);
         if (isUserPassword) {
             // 修改密码
-            Boolean isUpdatePassword = userService.updatePassword(userID, newPassword);
+            Boolean isUpdatePassword = userService.updatePassword(userId, newPassword);
             if (isUpdatePassword) {
                 return new SuccessResult<>();
             }
