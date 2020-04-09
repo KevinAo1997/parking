@@ -7,6 +7,7 @@ import com.aokai.parking.model.qo.updateGarageReq;
 import com.aokai.parking.model.vo.GarageListResp;
 import com.aokai.parking.po.Garage;
 import com.aokai.parking.service.GarageService;
+import com.aokai.parking.utils.BeanUtil;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
@@ -37,7 +38,7 @@ public class GarageServiceImpl implements GarageService {
         if (CollectionUtils.isEmpty(garageList)) {
             return null;
         }
-        BeanUtils.copyProperties(garageList, garageInfoList);
+        garageInfoList = BeanUtil.copyPropertiesByFastJson(garageList, GarageInfo.class);
         garageListResp.setGarageInfoList(garageInfoList);
 
         return garageListResp;
