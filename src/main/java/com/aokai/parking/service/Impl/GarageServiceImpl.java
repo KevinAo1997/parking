@@ -56,7 +56,7 @@ public class GarageServiceImpl implements GarageService {
         // 更新车库信息
         Garage garage = new Garage();
         BeanUtils.copyProperties(updateGarageReq, garage);
-        Integer update = garageMapper.updateByPrimaryKey(garage);
+        Integer update = garageMapper.updateByPrimaryKeySelective(garage);
         return update > 0;
     }
 

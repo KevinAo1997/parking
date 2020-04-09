@@ -11,6 +11,7 @@ import com.aokai.parking.service.UserService;
 import com.aokai.parking.utils.MD5Util;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -88,13 +89,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public Boolean updateUser(UpdateUserReq updateUserReq) {
         User user = new User();
-        user.setId(updateUserReq.getId());
-        user.setName(updateUserReq.getName());
-        user.setEmail(updateUserReq.getEmail());
-        user.setDescription(updateUserReq.getDescription());
-        user.setPhone(updateUserReq.getPhone());
-
-        Integer updateUser = userMapper.updateByPrimaryKey(user);
+        BeanUtils.copyProperties(updateUserReq, user);
+        Integer updateUser = userMapper.updateByPrimaryKeySelective(user);
         return updateUser > 0;
     }
 

@@ -36,6 +36,19 @@ public class OrderController {
         return new SuccessResult<>(todayOrderResp);
     }
 
+//
+//    /**
+//     * 今日车辆信息
+//     * @return
+//     */
+//    @RequestMapping(value = "/add", method = RequestMethod.POST)
+//    @ResponseBody
+//    public Result getTodayOrderList() {
+//        // 获取今日车辆信息
+//        TodayOrderResp todayOrderResp = orderService.getTodayOrderList();
+//        return new SuccessResult<>(todayOrderResp);
+//    }
+
 
 
 

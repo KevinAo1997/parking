@@ -56,7 +56,7 @@ public class CarServiceImpl implements CarService {
         Car car = new Car();
         BeanUtils.copyProperties(updateCarReq, car);
         // 更新车位信息
-        Integer updateCar = carMapper.updateByPrimaryKey(car);
+        Integer updateCar = carMapper.updateByPrimaryKeySelective(car);
         return updateCar > 0;
     }
 
