@@ -14,6 +14,7 @@ import com.aokai.parking.service.UserService;
 import com.aokai.parking.utils.TokenUtil;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import java.util.HashMap;
 import java.util.List;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,7 +52,10 @@ public class UserController {
             return new FailResult<>(ApplicationEnum.USER_OR_PWD_ERR);
         }
         // 生成token
+        HashMap<String, Object> userMap = new HashMap<>();
         String token = TokenUtil.sign(user);
+        userMap.put("user", user);
+        userMap.put("token", token);
         return new SuccessResult<>(token);
     }
 
