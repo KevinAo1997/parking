@@ -56,7 +56,7 @@ public class UserController {
         String token = TokenUtil.sign(user);
         userMap.put("user", user);
         userMap.put("token", token);
-        return new SuccessResult<>(token);
+        return new SuccessResult<>(userMap);
     }
 
     /**
