@@ -14,4 +14,19 @@
     <result column="car_price_time" jdbcType="DOUBLE" property="carPriceTime" />
     <result column="garage_id" jdbcType="INTEGER" property="garageId" />
   </resultMap>
+  <delete id="deleteCar">
+    delete from car where id = #{carId}
+  </delete>
+
+  <select id="getCarList" resultType="com.aokai.parking.po.Car">
+    select * from car where garage_id = #{garageId}
+  </select>
+
+  <select id="checkCarName" resultType="com.aokai.parking.po.Car">
+    select * from car where car_name = #{carName} and garage_id = #{garageId}
+  </select>
+
+  <select id="checkCarStatus" resultType="java.lang.Boolean">
+    select car_status from car where id = #{carId}
+  </select>
 </mapper>

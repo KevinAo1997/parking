@@ -19,6 +19,7 @@ public enum ApplicationEnum {
     PARAMETER_VERIFY_FAIL("0","参数校验失败"),
 
     USER_NAME_REPETITION("0","用户名已存在"),
+    NAME_REPETITION("0", "名称已存在"),
     USER_EMAIL_REPETITION("0", "邮箱已存在"),
     USER_OR_PWD_ERR("0","用户名或密码错误"),
     REGISTER_FAILED("0", "注册失败"),
@@ -32,6 +33,8 @@ public enum ApplicationEnum {
     REQUEST_FREQUENTLY("0","请求太过频繁"),
 
     TOKEN_INVALID("0", "token失效"),
+
+    CAR_SATATUS_USING("0", "车位正在使用"),
 
 
     FAIL("0","业务执行失败");

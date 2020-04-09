@@ -182,7 +182,7 @@ public class UserController {
         // 获取用户列表
         List<User> userList = userService.getUserList();
         if (CollectionUtils.isEmpty(userList)) {
-            return new FailResult<>();
+            return new SuccessResult<>(userList);
         }
         // 分页获取
         PageHelper.startPage(pageReq.getPageNum(), pageReq.getPageSize());
