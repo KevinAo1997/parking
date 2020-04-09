@@ -72,7 +72,7 @@ public class CarController {
         // 新增车位信息
         Boolean insertCar = carService.insertCar(insertCarReq);
         if (insertCar) {
-            new SuccessResult<>();
+            return new SuccessResult<>();
         }
         return new FailResult<>();
     }
