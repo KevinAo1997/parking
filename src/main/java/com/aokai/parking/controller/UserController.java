@@ -179,15 +179,15 @@ public class UserController {
     @RequestMapping(value = "/getUserList", method = RequestMethod.POST)
     @ResponseBody
     public Result getUserList(@RequestBody @Validated PageReq pageReq) {
+        Integer pageNum = pageReq.getPageNum() == null ? 1 : pageReq.getPageNum();
+        Integer pageSize = pageReq.getPageSize() == null ? 10 : pageReq.getPageSize();
+        PageHelper.startPage(pageNum, pageSize);
         // 获取用户列表
         List<User> userList = userService.getUserList();
         if (CollectionUtils.isEmpty(userList)) {
             return new SuccessResult<>(userList);
         }
         // 分页获取
-        Integer pageNum = pageReq.getPageNum() == null ? 1 : pageReq.getPageNum();
-        Integer pageSize = pageReq.getPageSize() == null ? 10 : pageReq.getPageSize();
-        PageHelper.startPage(pageNum, pageSize);
         PageInfo<User> userPageInfo = new PageInfo<>(userList);
         return new SuccessResult<>(userPageInfo);
     }

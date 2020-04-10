@@ -5,6 +5,7 @@ import com.aokai.parking.dao.GarageMapper;
 import com.aokai.parking.model.dto.GarageInfo;
 import com.aokai.parking.model.qo.garage.InsertGarageReq;
 import com.aokai.parking.model.qo.garage.updateGarageReq;
+import com.aokai.parking.po.Car;
 import com.aokai.parking.po.Garage;
 import com.aokai.parking.service.GarageService;
 import com.aokai.parking.utils.BeanUtil;
@@ -47,10 +48,20 @@ public class GarageServiceImpl implements GarageService {
 
     @Override
     public Boolean deleteGarage(Integer garageId) {
+        // 根据车库ID查询车位信息
+        List<Car> carList = carMapper.getCarList(garageId);
+        if (! CollectionUtils.isEmpty(carList)) {
+            for (Car car : carList) {
+                if (car.getCarStatus().equals(0)) {
+                    return false;
+                }
+            }
+            // 删除车库里的车位
+            Integer deleteCar = carMapper.deleteCarByGarageId(garageId);
+        }
         // 删除车库
         Integer delete = garageMapper.deleteByPrimaryKey(garageId);
-        // 删除车库里的车位
-        Integer deleteCar = carMapper.deleteCarByGarageId(garageId);
+
         return delete > 0 ;
     }
 

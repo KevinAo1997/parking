@@ -45,15 +45,15 @@ public class CarController {
     @RequestMapping(value = "/getCarList", method = RequestMethod.POST)
     @ResponseBody
     public Result getCarList(@RequestBody @Validated GetCarListReq getCarListReq) {
+        Integer pageNum = getCarListReq.getPageNum() == null ? 1 : getCarListReq.getPageNum();
+        Integer pageSize = getCarListReq.getPageSize() == null ? 10 : getCarListReq.getPageSize();
+        PageHelper.startPage(pageNum, pageSize);
         // 根据车库ID获取停车位列表
         List<Car> carList = carService.getCarList(getCarListReq.getGarageId());
         if (CollectionUtils.isEmpty(carList)) {
             return new SuccessResult<>(carList);
         }
         // 分页获取
-        Integer pageNum = getCarListReq.getPageNum() == null ? 1 : getCarListReq.getPageNum();
-        Integer pageSize = getCarListReq.getPageSize() == null ? 10 : getCarListReq.getPageSize();
-        PageHelper.startPage(pageNum, pageSize);
         PageInfo<Car> carPageInfo = new PageInfo<>(carList);
         return new SuccessResult<>(carPageInfo);
     }

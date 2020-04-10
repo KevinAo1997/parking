@@ -42,15 +42,16 @@ public class GarageController {
     @RequestMapping(value = "/getGarageList", method = RequestMethod.POST)
     @ResponseBody
     public Result getGarageList(@RequestBody @Validated PageReq pageReq) {
+        // 分页获取
+        int pageNum = pageReq.getPageNum() == null ? 1 : pageReq.getPageNum();
+        int pageSize = pageReq.getPageSize() == null ? 10 : pageReq.getPageSize();
+        PageHelper.startPage(pageNum, pageSize);
         // 获取车库列表
         List<GarageInfo> garageInfoList = garageService.getGarageList();
         if (CollectionUtils.isEmpty(garageInfoList)) {
             return new SuccessResult<>(null);
         }
-        // 分页获取
-        Integer pageNum = pageReq.getPageNum() == null ? 1 : pageReq.getPageNum();
-        Integer pageSize = pageReq.getPageSize() == null ? 10 : pageReq.getPageSize();
-        PageHelper.startPage(pageNum, pageSize);
+
         PageInfo<GarageInfo> garageInfoPageInfo = new PageInfo<>(garageInfoList);
         return new SuccessResult<>(garageInfoPageInfo);
     }
@@ -69,7 +70,7 @@ public class GarageController {
         if (isDelete) {
            return new SuccessResult<>();
         }
-        return new FailResult<>();
+        return new FailResult<>(ApplicationEnum.CAR_SATATUS_USING);
     }
 
     /**
