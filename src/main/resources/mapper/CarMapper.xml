@@ -27,7 +27,7 @@
   </delete>
 
   <select id="getCarList" resultType="com.aokai.parking.po.Car">
-    select * from car where garage_id = #{garageId}
+    select id, car_name AS carName, car_location AS carLocation, car_status AS carStatus, car_type AS carType ,car_price AS carPrice , car_price_time AS carPriceTime , garage_id AS garageId from car where garage_id = #{garageId}
   </select>
 
   <select id="checkCarName" resultType="com.aokai.parking.po.Car">

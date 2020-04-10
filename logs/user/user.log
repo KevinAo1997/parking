@@ -868,3 +868,90 @@ Caused by: java.lang.ClassNotFoundException: com.github.pagehelper.PageIntercept
 2020-04-10 19:13:16,418 INFO  6164 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting ProtocolHandler ["http-nio-8086"]
 2020-04-10 19:13:16,447 INFO  6164 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start/204 : Tomcat started on port(s): 8086 (http) with context path ''
 2020-04-10 19:13:16,451 INFO  6164 --- [main] org.springframework.boot.StartupInfoLogger.logStarted/61 : Started ParkingApplication in 4.517 seconds (JVM running for 5.815)
+2020-04-10 19:15:24,919 INFO  6164 --- [http-nio-8086-exec-1] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-10 19:15:24,920 INFO  6164 --- [http-nio-8086-exec-1] org.springframework.web.servlet.FrameworkServlet.initServletBean/525 : Initializing Servlet 'dispatcherServlet'
+2020-04-10 19:15:24,931 INFO  6164 --- [http-nio-8086-exec-1] org.springframework.web.servlet.FrameworkServlet.initServletBean/547 : Completed initialization in 11 ms
+2020-04-10 19:15:30,064 INFO  6164 --- [http-nio-8086-exec-1] com.zaxxer.hikari.HikariDataSource.getConnection/110 : HikariPool-1 - Starting...
+2020-04-10 19:15:31,208 INFO  6164 --- [http-nio-8086-exec-1] com.zaxxer.hikari.HikariDataSource.getConnection/123 : HikariPool-1 - Start completed.
+2020-04-10 19:15:31,291 DEBUG 6164 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM car WHERE garage_id = ? 
+2020-04-10 19:15:31,683 DEBUG 6164 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 18(Integer)
+2020-04-10 19:15:32,081 DEBUG 6164 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-10 19:15:32,112 DEBUG 6164 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select * from car where garage_id = ? LIMIT ? 
+2020-04-10 19:15:32,115 DEBUG 6164 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 18(Integer), 8(Integer)
+2020-04-10 19:15:32,156 DEBUG 6164 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 8
+2020-04-10 19:16:25,222 DEBUG 6164 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM car WHERE garage_id = ? 
+2020-04-10 19:16:25,224 DEBUG 6164 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 18(Integer)
+2020-04-10 19:16:25,255 DEBUG 6164 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-10 19:16:25,256 DEBUG 6164 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select * from car where garage_id = ? LIMIT ? 
+2020-04-10 19:16:25,257 DEBUG 6164 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 18(Integer), 8(Integer)
+2020-04-10 19:16:25,291 DEBUG 6164 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 8
+2020-04-10 19:16:34,819 DEBUG 6164 --- [http-nio-8086-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM car WHERE garage_id = ? 
+2020-04-10 19:16:34,821 DEBUG 6164 --- [http-nio-8086-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 18(Integer)
+2020-04-10 19:16:34,856 DEBUG 6164 --- [http-nio-8086-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-10 19:16:34,858 DEBUG 6164 --- [http-nio-8086-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select * from car where garage_id = ? LIMIT ? 
+2020-04-10 19:16:34,860 DEBUG 6164 --- [http-nio-8086-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 18(Integer), 8(Integer)
+2020-04-10 19:16:34,898 DEBUG 6164 --- [http-nio-8086-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 8
+2020-04-10 19:17:37,211 WARN  6164 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run/779 : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m24s890ms762µs900ns).
+2020-04-10 19:17:37,304 INFO  6164 --- [SpringContextShutdownHook] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown/218 : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-10 19:17:37,306 INFO  6164 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource.close/350 : HikariPool-1 - Shutdown initiated...
+2020-04-10 19:17:37,314 INFO  6164 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource.close/352 : HikariPool-1 - Shutdown completed.
+2020-04-10 19:17:44,784 INFO  7836 --- [main] org.springframework.boot.StartupInfoLogger.logStarting/55 : Starting ParkingApplication on DESKTOP-HQCJC2V with PID 7836 (D:\IDEAWork\parking\target\classes started by lenovo in D:\IDEAWork\parking)
+2020-04-10 19:17:44,790 INFO  7836 --- [main] org.springframework.boot.SpringApplication.logStartupProfileInfo/651 : No active profile set, falling back to default profiles: default
+2020-04-10 19:17:45,765 WARN  7836 --- [main] org.mybatis.logging.Logger.warn/44 : No MyBatis mapper was found in '[com.aokai.parking]' package. Please check your configuration.
+2020-04-10 19:17:46,257 INFO  7836 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize/92 : Tomcat initialized with port(s): 8086 (http)
+2020-04-10 19:17:46,266 INFO  7836 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing ProtocolHandler ["http-nio-8086"]
+2020-04-10 19:17:46,267 INFO  7836 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting service [Tomcat]
+2020-04-10 19:17:46,267 INFO  7836 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-10 19:17:46,395 INFO  7836 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring embedded WebApplicationContext
+2020-04-10 19:17:46,396 INFO  7836 --- [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext/284 : Root WebApplicationContext: initialization completed in 1483 ms
+2020-04-10 19:17:47,288 INFO  7836 --- [main] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize/181 : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-10 19:17:47,432 INFO  7836 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-10 19:17:47,433 INFO  7836 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-10 19:17:47,434 INFO  7836 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-10 19:17:47,435 INFO  7836 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache/83 : Clear EntityHelper entityTableMap cache.
+2020-04-10 19:17:47,549 INFO  7836 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting ProtocolHandler ["http-nio-8086"]
+2020-04-10 19:17:47,588 INFO  7836 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start/204 : Tomcat started on port(s): 8086 (http) with context path ''
+2020-04-10 19:17:47,592 INFO  7836 --- [main] org.springframework.boot.StartupInfoLogger.logStarted/61 : Started ParkingApplication in 3.551 seconds (JVM running for 4.792)
+2020-04-10 19:17:51,175 INFO  7836 --- [http-nio-8086-exec-1] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-10 19:17:51,175 INFO  7836 --- [http-nio-8086-exec-1] org.springframework.web.servlet.FrameworkServlet.initServletBean/525 : Initializing Servlet 'dispatcherServlet'
+2020-04-10 19:17:51,189 INFO  7836 --- [http-nio-8086-exec-1] org.springframework.web.servlet.FrameworkServlet.initServletBean/547 : Completed initialization in 13 ms
+2020-04-10 19:17:57,294 INFO  7836 --- [http-nio-8086-exec-1] com.zaxxer.hikari.HikariDataSource.getConnection/110 : HikariPool-1 - Starting...
+2020-04-10 19:17:58,347 INFO  7836 --- [http-nio-8086-exec-1] com.zaxxer.hikari.HikariDataSource.getConnection/123 : HikariPool-1 - Start completed.
+2020-04-10 19:17:58,419 DEBUG 7836 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM car WHERE garage_id = ? 
+2020-04-10 19:17:58,756 DEBUG 7836 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 18(Integer)
+2020-04-10 19:17:59,044 DEBUG 7836 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-10 19:17:59,061 DEBUG 7836 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select * from car where garage_id = ? LIMIT ? 
+2020-04-10 19:17:59,063 DEBUG 7836 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 18(Integer), 8(Integer)
+2020-04-10 19:17:59,109 DEBUG 7836 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 8
+2020-04-10 19:25:55,069 WARN  7836 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run/779 : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m56s619ms53µs).
+2020-04-10 19:25:55,137 INFO  7836 --- [SpringContextShutdownHook] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown/218 : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-10 19:25:55,138 INFO  7836 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource.close/350 : HikariPool-1 - Shutdown initiated...
+2020-04-10 19:25:55,171 INFO  7836 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource.close/352 : HikariPool-1 - Shutdown completed.
+2020-04-10 19:26:01,292 INFO  15944 --- [main] org.springframework.boot.StartupInfoLogger.logStarting/55 : Starting ParkingApplication on DESKTOP-HQCJC2V with PID 15944 (D:\IDEAWork\parking\target\classes started by lenovo in D:\IDEAWork\parking)
+2020-04-10 19:26:01,299 INFO  15944 --- [main] org.springframework.boot.SpringApplication.logStartupProfileInfo/651 : No active profile set, falling back to default profiles: default
+2020-04-10 19:26:02,472 WARN  15944 --- [main] org.mybatis.logging.Logger.warn/44 : No MyBatis mapper was found in '[com.aokai.parking]' package. Please check your configuration.
+2020-04-10 19:26:02,939 INFO  15944 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize/92 : Tomcat initialized with port(s): 8086 (http)
+2020-04-10 19:26:02,950 INFO  15944 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing ProtocolHandler ["http-nio-8086"]
+2020-04-10 19:26:02,951 INFO  15944 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting service [Tomcat]
+2020-04-10 19:26:02,951 INFO  15944 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-10 19:26:03,093 INFO  15944 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring embedded WebApplicationContext
+2020-04-10 19:26:03,093 INFO  15944 --- [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext/284 : Root WebApplicationContext: initialization completed in 1717 ms
+2020-04-10 19:26:03,997 INFO  15944 --- [main] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize/181 : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-10 19:26:04,147 INFO  15944 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-10 19:26:04,148 INFO  15944 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-10 19:26:04,150 INFO  15944 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-10 19:26:04,151 INFO  15944 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache/83 : Clear EntityHelper entityTableMap cache.
+2020-04-10 19:26:04,278 INFO  15944 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting ProtocolHandler ["http-nio-8086"]
+2020-04-10 19:26:04,308 INFO  15944 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start/204 : Tomcat started on port(s): 8086 (http) with context path ''
+2020-04-10 19:26:04,312 INFO  15944 --- [main] org.springframework.boot.StartupInfoLogger.logStarted/61 : Started ParkingApplication in 3.788 seconds (JVM running for 5.242)
+2020-04-10 19:26:20,782 INFO  15944 --- [http-nio-8086-exec-2] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-10 19:26:20,783 INFO  15944 --- [http-nio-8086-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean/525 : Initializing Servlet 'dispatcherServlet'
+2020-04-10 19:26:20,794 INFO  15944 --- [http-nio-8086-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean/547 : Completed initialization in 11 ms
+2020-04-10 19:26:26,042 INFO  15944 --- [http-nio-8086-exec-2] com.zaxxer.hikari.HikariDataSource.getConnection/110 : HikariPool-1 - Starting...
+2020-04-10 19:26:27,331 INFO  15944 --- [http-nio-8086-exec-2] com.zaxxer.hikari.HikariDataSource.getConnection/123 : HikariPool-1 - Start completed.
+2020-04-10 19:26:27,406 DEBUG 15944 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT count(0) FROM car WHERE garage_id = ? 
+2020-04-10 19:26:27,780 DEBUG 15944 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 18(Integer)
+2020-04-10 19:26:28,106 DEBUG 15944 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-10 19:26:28,124 DEBUG 15944 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select id, car_name AS carName, car_location AS carLocation, car_status AS carStatus, car_type AS carType ,car_price AS carPrice , car_price_time AS carPriceTime , garage_id AS garageId from car where garage_id = ? LIMIT ? 
+2020-04-10 19:26:28,126 DEBUG 15944 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 18(Integer), 8(Integer)
+2020-04-10 19:26:28,174 DEBUG 15944 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 8

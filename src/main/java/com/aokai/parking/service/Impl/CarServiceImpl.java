@@ -29,6 +29,7 @@ public class CarServiceImpl implements CarService {
     public List<Car> getCarList(Integer garageId) {
          // 根据车库ID获取停车位列表
         List<Car> carList = carMapper.getCarList(garageId);
+        int a= 3;
         if (CollectionUtils.isEmpty(carList)) {
             return null;
         }
