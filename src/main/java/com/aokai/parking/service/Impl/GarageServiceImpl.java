@@ -51,7 +51,7 @@ public class GarageServiceImpl implements GarageService {
         Integer delete = garageMapper.deleteByPrimaryKey(garageId);
         // 删除车库里的车位
         Integer deleteCar = carMapper.deleteCarByGarageId(garageId);
-        return delete > 0 && deleteCar > 0;
+        return delete > 0 ;
     }
 
     @Override
