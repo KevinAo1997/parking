@@ -6,9 +6,11 @@ import com.aokai.parking.dao.OrderMapper;
 import com.aokai.parking.dao.UserMapper;
 import com.aokai.parking.model.dto.OrderInfo;
 import com.aokai.parking.model.qo.order.AddCarOrderReq;
+import com.aokai.parking.model.qo.order.SearchCarOrderReq;
 import com.aokai.parking.model.qo.order.UpdateCarOrderReq;
 import com.aokai.parking.model.vo.GetCarOrderResp;
 import com.aokai.parking.model.vo.OutCarOrderResp;
+import com.aokai.parking.model.vo.SearchCarOrderResp;
 import com.aokai.parking.model.vo.TodayOrderResp;
 import com.aokai.parking.po.Car;
 import com.aokai.parking.po.Garage;
@@ -162,5 +164,34 @@ public class OrderServiceImpl implements OrderService {
             return outCarOrderResp;
         }
         return null;
+    }
+
+    @Override
+    public SearchCarOrderResp searchCarOrder(SearchCarOrderReq searchCarOrderReq) {
+        SearchCarOrderResp searchCarOrderResp = new SearchCarOrderResp();
+
+        String province = searchCarOrderReq.getProvince();
+        String carnumber = searchCarOrderReq.getCarnumber();
+
+        // 查询订单
+        Order order = orderMapper.getOrderByCarNum(province, carnumber);
+        if (order == null) {
+            return null;
+        }
+        searchCarOrderResp.setCustomername(order.getCustomername());
+        searchCarOrderResp.setCustomerphone(order.getCustomerphone());
+        searchCarOrderResp.setProvince(province);
+        searchCarOrderResp.setCarnumber(carnumber);
+        // 获取车位信息
+        Car car = carMapper.selectByPrimaryKey(order.getCarId());
+        if (car != null) {
+            searchCarOrderResp.setCarName(car.getCarName());
+        }
+        // 获取车库信息
+        Garage garage = garageMapper.selectByPrimaryKey(order.getGarageId());
+        if (garage != null) {
+            searchCarOrderResp.setGarageName(garage.getGarageName());
+        }
+        return searchCarOrderResp;
     }
 }

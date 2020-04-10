@@ -52,4 +52,18 @@
     #{userIds}
   </foreach>
   </select>
+  <select id="searchUser" resultType="com.aokai.parking.po.User">
+    select * from user
+    <where>
+      <if test="username !=null">
+        and username = #{userName}
+      </if>
+      <if test="code != null">
+        and code= #{code}
+      </if>
+      <if test="name != null">
+        and name = #{name}
+      </if>
+    </where>
+  </select>
 </mapper>

@@ -1,6 +1,7 @@
 package com.aokai.parking.service;
 
 import com.aokai.parking.model.qo.user.InsertUserReq;
+import com.aokai.parking.model.qo.user.SearchUserReq;
 import com.aokai.parking.model.qo.user.UpdateUserReq;
 import com.aokai.parking.model.qo.user.UpdateUserTypeReq;
 import com.aokai.parking.model.qo.user.UserReq;
@@ -87,4 +88,10 @@ public interface UserService {
      */
     List<User> getUserList();
 
+    /**
+     * 搜索用户
+     * @param searchUserReq
+     * @return
+     */
+    User searchUser(SearchUserReq searchUserReq);
 }

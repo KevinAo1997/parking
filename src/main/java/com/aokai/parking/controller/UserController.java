@@ -4,6 +4,7 @@ import com.aokai.parking.enums.ApplicationEnum;
 import com.aokai.parking.model.qo.user.DeleteUserReq;
 import com.aokai.parking.model.qo.user.InsertUserReq;
 import com.aokai.parking.model.qo.PageReq;
+import com.aokai.parking.model.qo.user.SearchUserReq;
 import com.aokai.parking.model.qo.user.UpdatePasswordReq;
 import com.aokai.parking.model.qo.user.UpdateUserReq;
 import com.aokai.parking.model.qo.user.UpdateUserTypeReq;
@@ -190,6 +191,21 @@ public class UserController {
         // 分页获取
         PageInfo<User> userPageInfo = new PageInfo<>(userList);
         return new SuccessResult<>(userPageInfo);
+    }
+
+
+
+    /**
+     * 搜索用户
+     * @param searchUserReq
+     * @return
+     */
+    @RequestMapping(value = "/searchUser", method = RequestMethod.POST)
+    @ResponseBody
+    public Result searchUser(@RequestBody @Validated SearchUserReq searchUserReq) {
+        // 搜索用户
+        User user = userService.searchUser(searchUserReq);
+        return new SuccessResult<>(user);
     }
 
 

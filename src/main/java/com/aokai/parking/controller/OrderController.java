@@ -1,9 +1,12 @@
 package com.aokai.parking.controller;
 
 import com.aokai.parking.model.qo.order.AddCarOrderReq;
+import com.aokai.parking.model.qo.order.GetCarOrderReq;
+import com.aokai.parking.model.qo.order.SearchCarOrderReq;
 import com.aokai.parking.model.qo.order.UpdateCarOrderReq;
 import com.aokai.parking.model.vo.GetCarOrderResp;
 import com.aokai.parking.model.vo.OutCarOrderResp;
+import com.aokai.parking.model.vo.SearchCarOrderResp;
 import com.aokai.parking.model.vo.TodayOrderResp;
 import com.aokai.parking.model.vo.result.FailResult;
 import com.aokai.parking.model.vo.result.Result;
@@ -49,9 +52,9 @@ public class OrderController {
      */
     @RequestMapping(value = "/getCarOrder", method = RequestMethod.POST)
     @ResponseBody
-    public Result getCarOrder(@RequestBody @Validated Integer carId) {
+    public Result getCarOrder(@RequestBody @Validated GetCarOrderReq getCarOrderReq) {
         // 获取当前车位车辆信息
-        GetCarOrderResp getCarOrderResp = orderService.getCarOrder(carId);
+        GetCarOrderResp getCarOrderResp = orderService.getCarOrder(getCarOrderReq.getCarId());
         if (getCarOrderResp == null) {
             return new FailResult<>();
         }
@@ -87,6 +90,20 @@ public class OrderController {
             return new FailResult<>();
         }
         return new SuccessResult<>(outCarOrderResp);
+    }
+
+
+    /**
+     * 搜索车辆
+     * @return
+     */
+    @RequestMapping(value = "/searchCarOrder", method = RequestMethod.POST)
+    @ResponseBody
+    public Result searchCarOrder(@RequestBody @Validated SearchCarOrderReq searchCarOrderReq) {
+        // 搜索车辆
+        SearchCarOrderResp searchCarOrderResp = orderService.searchCarOrder(searchCarOrderReq);
+
+        return new SuccessResult<>(searchCarOrderResp);
     }
 
 

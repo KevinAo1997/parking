@@ -68,4 +68,14 @@ public interface UserMapper extends Mapper<User> {
      * @return
      */
     List<User> selectUserByUserIds(@Param("userIds") List<Integer> userIds);
+
+    /**
+     *
+     * @param code
+     * @param username
+     * @param name
+     * @return
+     */
+    User searchUser(
+            @Param("code") String code, @Param("username") String username, @Param("name") String name);
 }

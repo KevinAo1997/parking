@@ -3,6 +3,7 @@ package com.aokai.parking.service.Impl;
 import com.aokai.parking.dao.UserMapper;
 import com.aokai.parking.enums.UserTypeEnum;
 import com.aokai.parking.model.qo.user.InsertUserReq;
+import com.aokai.parking.model.qo.user.SearchUserReq;
 import com.aokai.parking.model.qo.user.UpdateUserReq;
 import com.aokai.parking.model.qo.user.UpdateUserTypeReq;
 import com.aokai.parking.model.qo.user.UserReq;
@@ -111,5 +112,19 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> getUserList() {
         return userMapper.selectAll();
+    }
+
+    @Override
+    public User searchUser(SearchUserReq searchUserReq) {
+        String code = searchUserReq.getCode();
+        String username = searchUserReq.getUsername();
+        String name = searchUserReq.getName();
+
+        // 模糊搜索用户
+        User user = userMapper.searchUser(code, username, name);
+        if (user == null) {
+            return null;
+        }
+        return user;
     }
 }

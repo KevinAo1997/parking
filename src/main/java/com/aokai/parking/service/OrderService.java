@@ -1,9 +1,11 @@
 package com.aokai.parking.service;
 
 import com.aokai.parking.model.qo.order.AddCarOrderReq;
+import com.aokai.parking.model.qo.order.SearchCarOrderReq;
 import com.aokai.parking.model.qo.order.UpdateCarOrderReq;
 import com.aokai.parking.model.vo.GetCarOrderResp;
 import com.aokai.parking.model.vo.OutCarOrderResp;
+import com.aokai.parking.model.vo.SearchCarOrderResp;
 import com.aokai.parking.model.vo.TodayOrderResp;
 
 /**
@@ -40,4 +42,11 @@ public interface OrderService {
      * @return
      */
     OutCarOrderResp updateCarOrder(UpdateCarOrderReq updateCarOrderReq);
+
+    /**
+     * 搜索车辆
+     * @param searchCarOrderReq
+     * @return
+     */
+    SearchCarOrderResp searchCarOrder(SearchCarOrderReq searchCarOrderReq);
 }
