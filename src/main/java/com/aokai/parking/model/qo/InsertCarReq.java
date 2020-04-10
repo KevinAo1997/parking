@@ -29,7 +29,7 @@ public class InsertCarReq implements Serializable {
     /**
      * 车位类型：小型车和大型车
      */
-    private Integer carType;
+    private String carType;
 
     /**
      * 价格

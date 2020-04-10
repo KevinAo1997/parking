@@ -184,7 +184,9 @@ public class UserController {
             return new SuccessResult<>(userList);
         }
         // 分页获取
-        PageHelper.startPage(pageReq.getPageNum(), pageReq.getPageSize());
+        Integer pageNum = pageReq.getPageNum() == null ? 1 : pageReq.getPageNum();
+        Integer pageSize = pageReq.getPageSize() == null ? 10 : pageReq.getPageSize();
+        PageHelper.startPage(pageNum, pageSize);
         PageInfo<User> userPageInfo = new PageInfo<>(userList);
         return new SuccessResult<>(userPageInfo);
     }

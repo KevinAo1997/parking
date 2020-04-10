@@ -30,3 +30,19 @@
 2020-04-10 00:08:00,093 DEBUG 10212 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: update user set password = ? where id = ? 
 2020-04-10 00:08:00,096 DEBUG 10212 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: fcea920f7412b5da7be0cf42b8c93759(String), 1(Integer)
 2020-04-10 00:08:00,190 DEBUG 10212 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==    Updates: 1
+2020-04-10 00:45:27,212 DEBUG 10212 --- [http-nio-8086-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select * from car where car_name = ? and garage_id = ? 
+2020-04-10 00:45:27,221 DEBUG 10212 --- [http-nio-8086-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: vfv(String), 18(Integer)
+2020-04-10 00:45:27,279 DEBUG 10212 --- [http-nio-8086-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-10 00:46:25,139 WARN  10212 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run/779 : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m5s567ms760µs600ns).
+2020-04-10 00:46:37,749 DEBUG 10212 --- [http-nio-8086-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select * from car where car_name = ? and garage_id = ? 
+2020-04-10 00:46:37,751 DEBUG 10212 --- [http-nio-8086-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: asdas(String), 18(Integer)
+2020-04-10 00:46:37,784 DEBUG 10212 --- [http-nio-8086-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 0
+2020-04-10 00:46:37,903 DEBUG 10212 --- [http-nio-8086-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: INSERT INTO car ( id,car_name,car_location,car_status,car_type,car_price,car_price_time,garage_id ) VALUES( ?,?,?,?,?,?,?,? ) 
+2020-04-10 00:46:37,912 DEBUG 10212 --- [http-nio-8086-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: null, asdas(String), null, null, 0(Integer), 2.0(Double), 3.0(Double), 18(Integer)
+2020-04-10 00:46:37,996 DEBUG 10212 --- [http-nio-8086-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==    Updates: 1
+2020-04-10 00:47:15,118 DEBUG 10212 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select * from car where car_name = ? and garage_id = ? 
+2020-04-10 00:47:15,125 DEBUG 10212 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: aaaaa(String), 18(Integer)
+2020-04-10 00:47:15,168 DEBUG 10212 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 0
+2020-04-10 00:47:35,910 DEBUG 10212 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: INSERT INTO car ( id,car_name,car_location,car_status,car_type,car_price,car_price_time,garage_id ) VALUES( ?,?,?,?,?,?,?,? ) 
+2020-04-10 00:47:35,935 DEBUG 10212 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: null, aaaaa(String), null, null, 0(Integer), 2.0(Double), 3.0(Double), 18(Integer)
+2020-04-10 00:47:36,029 DEBUG 10212 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==    Updates: 1

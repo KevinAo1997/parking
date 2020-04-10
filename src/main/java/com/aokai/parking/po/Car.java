@@ -32,7 +32,7 @@ public class Car {
      * 车位类型：小型车和大型车
      */
     @Column(name = "car_type")
-    private Integer carType;
+    private String carType;
 
     /**
      * 价格
@@ -129,7 +129,7 @@ public class Car {
      *
      * @return car_type - 车位类型：小型车和大型车
      */
-    public Integer getCarType() {
+    public String getCarType() {
         return carType;
     }
 
@@ -138,7 +138,7 @@ public class Car {
      *
      * @param carType 车位类型：小型车和大型车
      */
-    public void setCarType(Integer carType) {
+    public void setCarType(String carType) {
         this.carType = carType;
     }
 

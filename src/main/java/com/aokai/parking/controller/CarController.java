@@ -1,6 +1,7 @@
 package com.aokai.parking.controller;
 
 import com.aokai.parking.enums.ApplicationEnum;
+import com.aokai.parking.model.qo.GetCarListReq;
 import com.aokai.parking.model.qo.InsertCarReq;
 import com.aokai.parking.model.qo.PageReq;
 import com.aokai.parking.model.qo.UpdateCarReq;
@@ -13,6 +14,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import java.util.List;
 import org.apache.commons.collections.CollectionUtils;
+import org.omg.CORBA.INTERNAL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -38,19 +40,21 @@ public class CarController {
 
     /**
      * 分页获取停车位列表
-     * @param pageReq
+     * @param getCarListReq
      * @return
      */
     @RequestMapping(value = "/getCarList", method = RequestMethod.POST)
     @ResponseBody
-    public Result getCarList(@RequestBody @Validated Integer garageId, PageReq pageReq) {
+    public Result getCarList(@RequestBody @Validated GetCarListReq getCarListReq) {
         // 根据车库ID获取停车位列表
-        List<Car> carList = carService.getCarList(garageId);
+        List<Car> carList = carService.getCarList(getCarListReq.getGarageId());
         if (CollectionUtils.isEmpty(carList)) {
             return new SuccessResult<>(carList);
         }
         // 分页获取
-        PageHelper.startPage(pageReq.getPageNum(), pageReq.getPageSize());
+        Integer pageNum = getCarListReq.getPageNum() == null ? 1 : getCarListReq.getPageNum();
+        Integer pageSize = getCarListReq.getPageSize() == null ? 10 : getCarListReq.getPageSize();
+        PageHelper.startPage(pageNum, pageSize);
         PageInfo<Car> carPageInfo = new PageInfo<>(carList);
         return new SuccessResult<>(carPageInfo);
     }

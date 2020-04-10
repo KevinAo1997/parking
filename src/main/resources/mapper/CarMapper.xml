@@ -9,7 +9,7 @@
     <result column="car_name" jdbcType="VARCHAR" property="carName" />
     <result column="car_location" jdbcType="VARCHAR" property="carLocation" />
     <result column="car_status" jdbcType="INTEGER" property="carStatus" />
-    <result column="car_type" jdbcType="INTEGER" property="carType" />
+    <result column="car_type" jdbcType="VARCHAR" property="carType" />
     <result column="car_price" jdbcType="DOUBLE" property="carPrice" />
     <result column="car_price_time" jdbcType="DOUBLE" property="carPriceTime" />
     <result column="garage_id" jdbcType="INTEGER" property="garageId" />
