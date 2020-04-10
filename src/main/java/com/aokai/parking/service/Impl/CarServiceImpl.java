@@ -1,8 +1,8 @@
 package com.aokai.parking.service.Impl;
 
 import com.aokai.parking.dao.CarMapper;
-import com.aokai.parking.model.qo.InsertCarReq;
-import com.aokai.parking.model.qo.UpdateCarReq;
+import com.aokai.parking.model.qo.car.InsertCarReq;
+import com.aokai.parking.model.qo.car.UpdateCarReq;
 import com.aokai.parking.po.Car;
 import com.aokai.parking.service.CarService;
 import java.util.List;

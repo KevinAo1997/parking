@@ -1,6 +1,6 @@
 package com.aokai.parking.service;
 
-import com.aokai.parking.model.qo.InsertMessageReq;
+import com.aokai.parking.model.qo.message.InsertMessageReq;
 import com.aokai.parking.model.vo.MessageListResp;
 
 /**

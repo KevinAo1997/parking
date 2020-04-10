@@ -1,4 +1,4 @@
-package com.aokai.parking.model.qo;
+package com.aokai.parking.model.qo.car;
 
 import java.io.Serializable;
 import lombok.Data;
@@ -8,13 +8,18 @@ import lombok.ToString;
  * Description :   .
  *
  * @author : aokai
- * @date : Created in 2020/4/9 16:45
+ * @date : Created in 2020/4/9 17:23
  */
 @Data
 @ToString
-public class InsertCarReq implements Serializable {
+public class UpdateCarReq implements Serializable {
 
-    private static final long serialVersionUID = -8311486966038823240L;
+    private static final long serialVersionUID = -2873872652303338590L;
+
+    /**
+     * 车位ID
+     */
+    private Integer id;
 
     /**
      * 车位名称

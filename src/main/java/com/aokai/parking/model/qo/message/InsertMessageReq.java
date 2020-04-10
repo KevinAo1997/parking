@@ -1,4 +1,4 @@
-package com.aokai.parking.model.qo;
+package com.aokai.parking.model.qo.message;
 
 import java.io.Serializable;
 import javax.validation.constraints.NotBlank;

@@ -1,9 +1,8 @@
 package com.aokai.parking.service;
 
 import com.aokai.parking.model.dto.GarageInfo;
-import com.aokai.parking.model.qo.InsertGarageReq;
-import com.aokai.parking.model.qo.updateGarageReq;
-import com.aokai.parking.model.vo.GarageListResp;
+import com.aokai.parking.model.qo.garage.InsertGarageReq;
+import com.aokai.parking.model.qo.garage.updateGarageReq;
 import java.util.List;
 
 /**

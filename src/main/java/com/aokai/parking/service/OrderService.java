@@ -1,7 +1,7 @@
 package com.aokai.parking.service;
 
-import com.aokai.parking.model.qo.AddCarOrderReq;
-import com.aokai.parking.model.qo.UpdateCarOrderReq;
+import com.aokai.parking.model.qo.order.AddCarOrderReq;
+import com.aokai.parking.model.qo.order.UpdateCarOrderReq;
 import com.aokai.parking.model.vo.GetCarOrderResp;
 import com.aokai.parking.model.vo.OutCarOrderResp;
 import com.aokai.parking.model.vo.TodayOrderResp;

@@ -1,4 +1,4 @@
-package com.aokai.parking.model.qo;
+package com.aokai.parking.model.qo.garage;
 
 import java.io.Serializable;
 import java.net.Inet4Address;

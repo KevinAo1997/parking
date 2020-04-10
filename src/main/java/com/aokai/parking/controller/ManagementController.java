@@ -1,17 +1,8 @@
 package com.aokai.parking.controller;
 
-import com.aokai.parking.enums.ApplicationEnum;
-import com.aokai.parking.model.qo.InsertGarageReq;
-import com.aokai.parking.model.vo.result.FailResult;
-import com.aokai.parking.model.vo.result.Result;
-import com.aokai.parking.model.vo.result.SuccessResult;
 import com.aokai.parking.service.ManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**

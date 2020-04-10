@@ -1,9 +1,9 @@
 package com.aokai.parking.service;
 
-import com.aokai.parking.model.qo.InsertUserReq;
-import com.aokai.parking.model.qo.UpdateUserReq;
-import com.aokai.parking.model.qo.UpdateUserTypeReq;
-import com.aokai.parking.model.qo.UserReq;
+import com.aokai.parking.model.qo.user.InsertUserReq;
+import com.aokai.parking.model.qo.user.UpdateUserReq;
+import com.aokai.parking.model.qo.user.UpdateUserTypeReq;
+import com.aokai.parking.model.qo.user.UserReq;
 import com.aokai.parking.po.User;
 import java.util.List;
 

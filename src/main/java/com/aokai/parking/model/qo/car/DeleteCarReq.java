@@ -1,4 +1,4 @@
-package com.aokai.parking.model.qo;
+package com.aokai.parking.model.qo.car;
 
 import java.io.Serializable;
 import lombok.Data;

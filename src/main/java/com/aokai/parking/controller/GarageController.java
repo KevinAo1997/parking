@@ -2,15 +2,13 @@ package com.aokai.parking.controller;
 
 import com.aokai.parking.enums.ApplicationEnum;
 import com.aokai.parking.model.dto.GarageInfo;
-import com.aokai.parking.model.qo.DeleteGarageReq;
-import com.aokai.parking.model.qo.InsertGarageReq;
+import com.aokai.parking.model.qo.garage.DeleteGarageReq;
+import com.aokai.parking.model.qo.garage.InsertGarageReq;
 import com.aokai.parking.model.qo.PageReq;
-import com.aokai.parking.model.qo.updateGarageReq;
-import com.aokai.parking.model.vo.GarageListResp;
+import com.aokai.parking.model.qo.garage.updateGarageReq;
 import com.aokai.parking.model.vo.result.FailResult;
 import com.aokai.parking.model.vo.result.Result;
 import com.aokai.parking.model.vo.result.SuccessResult;
-import com.aokai.parking.po.User;
 import com.aokai.parking.service.GarageService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -106,7 +104,7 @@ public class GarageController {
         // 新增车库信息
         Boolean insertGarage = garageService.insertGarage(insertGarageReq);
         if (insertGarage) {
-            new SuccessResult<>();
+           return new SuccessResult<>();
         }
         return new FailResult<>();
     }

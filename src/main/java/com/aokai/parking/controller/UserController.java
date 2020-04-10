@@ -1,13 +1,13 @@
 package com.aokai.parking.controller;
 
 import com.aokai.parking.enums.ApplicationEnum;
-import com.aokai.parking.model.qo.DeleteUserReq;
-import com.aokai.parking.model.qo.InsertUserReq;
+import com.aokai.parking.model.qo.user.DeleteUserReq;
+import com.aokai.parking.model.qo.user.InsertUserReq;
 import com.aokai.parking.model.qo.PageReq;
-import com.aokai.parking.model.qo.UpdatePasswordReq;
-import com.aokai.parking.model.qo.UpdateUserReq;
-import com.aokai.parking.model.qo.UpdateUserTypeReq;
-import com.aokai.parking.model.qo.UserReq;
+import com.aokai.parking.model.qo.user.UpdatePasswordReq;
+import com.aokai.parking.model.qo.user.UpdateUserReq;
+import com.aokai.parking.model.qo.user.UpdateUserTypeReq;
+import com.aokai.parking.model.qo.user.UserReq;
 import com.aokai.parking.model.vo.result.FailResult;
 import com.aokai.parking.model.vo.result.Result;
 import com.aokai.parking.model.vo.result.SuccessResult;

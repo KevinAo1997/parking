@@ -1,4 +1,4 @@
-package com.aokai.parking.model.qo;
+package com.aokai.parking.model.qo.user;
 
 import com.aokai.parking.enums.UserTypeEnum;
 import java.io.Serializable;

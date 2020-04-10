@@ -1,15 +1,11 @@
 package com.aokai.parking.controller;
 
-import com.aokai.parking.model.qo.InsertMessageReq;
-import com.aokai.parking.model.qo.PageReq;
-import com.aokai.parking.model.qo.UpdateUserReq;
+import com.aokai.parking.model.qo.message.InsertMessageReq;
 import com.aokai.parking.model.vo.MessageListResp;
 import com.aokai.parking.model.vo.result.FailResult;
 import com.aokai.parking.model.vo.result.Result;
 import com.aokai.parking.model.vo.result.SuccessResult;
 import com.aokai.parking.service.MessageService;
-import java.util.List;
-import javax.xml.ws.ResponseWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
