@@ -456,3 +456,21 @@ org.apache.ibatis.builder.BuilderException: Error evaluating expression 'oredCri
 2020-04-10 17:04:11,829 INFO  13152 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting ProtocolHandler ["http-nio-8086"]
 2020-04-10 17:04:11,862 INFO  13152 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start/204 : Tomcat started on port(s): 8086 (http) with context path ''
 2020-04-10 17:04:11,868 INFO  13152 --- [main] org.springframework.boot.StartupInfoLogger.logStarted/61 : Started ParkingApplication in 3.431 seconds (JVM running for 4.625)
+2020-04-10 17:56:53,608 INFO  13152 --- [SpringContextShutdownHook] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown/218 : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-10 17:57:06,753 INFO  9560 --- [main] org.springframework.boot.StartupInfoLogger.logStarting/55 : Starting ParkingApplication on DESKTOP-HQCJC2V with PID 9560 (D:\IDEAWork\parking\target\classes started by lenovo in D:\IDEAWork\parking)
+2020-04-10 17:57:06,765 INFO  9560 --- [main] org.springframework.boot.SpringApplication.logStartupProfileInfo/651 : No active profile set, falling back to default profiles: default
+2020-04-10 17:57:07,778 WARN  9560 --- [main] org.mybatis.logging.Logger.warn/44 : No MyBatis mapper was found in '[com.aokai.parking]' package. Please check your configuration.
+2020-04-10 17:57:08,265 INFO  9560 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize/92 : Tomcat initialized with port(s): 8086 (http)
+2020-04-10 17:57:08,276 INFO  9560 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing ProtocolHandler ["http-nio-8086"]
+2020-04-10 17:57:08,277 INFO  9560 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting service [Tomcat]
+2020-04-10 17:57:08,278 INFO  9560 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-10 17:57:08,410 INFO  9560 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring embedded WebApplicationContext
+2020-04-10 17:57:08,410 INFO  9560 --- [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext/284 : Root WebApplicationContext: initialization completed in 1509 ms
+2020-04-10 17:57:09,345 INFO  9560 --- [main] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize/181 : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-10 17:57:09,491 INFO  9560 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-10 17:57:09,492 INFO  9560 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-10 17:57:09,493 INFO  9560 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-10 17:57:09,493 INFO  9560 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache/83 : Clear EntityHelper entityTableMap cache.
+2020-04-10 17:57:09,616 INFO  9560 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting ProtocolHandler ["http-nio-8086"]
+2020-04-10 17:57:09,645 INFO  9560 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start/204 : Tomcat started on port(s): 8086 (http) with context path ''
+2020-04-10 17:57:09,650 INFO  9560 --- [main] org.springframework.boot.StartupInfoLogger.logStarted/61 : Started ParkingApplication in 3.732 seconds (JVM running for 5.036)

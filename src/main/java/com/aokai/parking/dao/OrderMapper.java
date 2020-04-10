@@ -2,6 +2,7 @@ package com.aokai.parking.dao;
 
 import com.aokai.parking.po.Order;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -27,4 +28,22 @@ public interface OrderMapper extends Mapper<Order> {
      * @return
      */
     Order getCarOrder(@Param("carId") Integer carId);
+
+    /**
+     * 车辆车库修改订单
+     * @param province
+     * @param carnumber
+     * @param date
+     * @return
+     */
+    Integer updateCarOrder(@Param("province") String province, @Param("carnumber") String carnumber,
+            @Param("date") Date date);
+
+    /**
+     * 根据车牌号查询订单
+     * @param province
+     * @param carnumber
+     * @return
+     */
+    Order getOrderByCarNum(@Param("province") String province, @Param("carnumber") String carnumber);
 }

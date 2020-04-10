@@ -1,5 +1,6 @@
 package com.aokai.parking.po;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import javax.persistence.*;
 
@@ -38,13 +39,13 @@ public class Order {
      * 开始时间
      */
     @Column(name = "startTime")
-    private Date starttime;
+    private LocalDateTime starttime;
 
     /**
      * 结束时间
      */
     @Column(name = "endTime")
-    private Date endtime;
+    private LocalDateTime endtime;
 
     /**
      * 花费
@@ -174,7 +175,7 @@ public class Order {
      *
      * @return startTime - 开始时间
      */
-    public Date getStarttime() {
+    public LocalDateTime getStarttime() {
         return starttime;
     }
 
@@ -183,7 +184,7 @@ public class Order {
      *
      * @param starttime 开始时间
      */
-    public void setStarttime(Date starttime) {
+    public void setStarttime(LocalDateTime starttime) {
         this.starttime = starttime;
     }
 
@@ -192,7 +193,7 @@ public class Order {
      *
      * @return endTime - 结束时间
      */
-    public Date getEndtime() {
+    public LocalDateTime getEndtime() {
         return endtime;
     }
 
@@ -201,7 +202,7 @@ public class Order {
      *
      * @param endtime 结束时间
      */
-    public void setEndtime(Date endtime) {
+    public void setEndtime(LocalDateTime endtime) {
         this.endtime = endtime;
     }
 

@@ -1,7 +1,9 @@
 package com.aokai.parking.service;
 
 import com.aokai.parking.model.qo.AddCarOrderReq;
+import com.aokai.parking.model.qo.UpdateCarOrderReq;
 import com.aokai.parking.model.vo.GetCarOrderResp;
+import com.aokai.parking.model.vo.OutCarOrderResp;
 import com.aokai.parking.model.vo.TodayOrderResp;
 
 /**
@@ -31,4 +33,11 @@ public interface OrderService {
      * @return
      */
     Boolean addCarOrder(AddCarOrderReq addCarOrderReq);
+
+    /**
+     * 车辆车库修改订单
+     * @param updateCarOrderReq
+     * @return
+     */
+    OutCarOrderResp updateCarOrder(UpdateCarOrderReq updateCarOrderReq);
 }

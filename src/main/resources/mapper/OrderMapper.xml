@@ -19,10 +19,16 @@
     <result column="car_id" jdbcType="INTEGER" property="carId" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
   </resultMap>
+  <update id="updateCarOrder">
+    update order set endTime = #{date}, status = 1 where province = #{province} and carNumber = #{carnumber]}
+  </update>
   <select id="getTodayOrderList" resultType="com.aokai.parking.po.Order">
     select * from order where endTime &lt; #{endTime} and endTime &gt; #{startTime}
   </select>
   <select id="getCarOrder" resultType="com.aokai.parking.po.Order">
     select * from order where car_id = #{carId} and status = 0
+  </select>
+  <select id="getOrderByCarNum" resultType="com.aokai.parking.po.Order">
+    select * from order where province = #{province} and carNumber = #{carnumber} and status = 0
   </select>
 </mapper>

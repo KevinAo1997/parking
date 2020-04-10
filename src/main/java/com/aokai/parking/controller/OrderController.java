@@ -1,8 +1,10 @@
 package com.aokai.parking.controller;
 
 import com.aokai.parking.model.qo.AddCarOrderReq;
+import com.aokai.parking.model.qo.UpdateCarOrderReq;
 import com.aokai.parking.model.vo.GetCarOrderResp;
 import com.aokai.parking.model.vo.MessageListResp;
+import com.aokai.parking.model.vo.OutCarOrderResp;
 import com.aokai.parking.model.vo.TodayOrderResp;
 import com.aokai.parking.model.vo.result.FailResult;
 import com.aokai.parking.model.vo.result.Result;
@@ -70,6 +72,22 @@ public class OrderController {
             return new SuccessResult<>();
         }
         return new FailResult<>();
+    }
+
+
+    /**
+     * 车辆出库修改订单
+     * @return
+     */
+    @RequestMapping(value = "/updateCarOrder", method = RequestMethod.POST)
+    @ResponseBody
+    public Result addCarOrder(@RequestBody @Validated UpdateCarOrderReq updateCarOrderReq) {
+        // 车辆车库修改订单
+        OutCarOrderResp outCarOrderResp = orderService.updateCarOrder(updateCarOrderReq);
+        if (outCarOrderResp == null) {
+            return new FailResult<>();
+        }
+        return new SuccessResult<>(outCarOrderResp);
     }
 
 
