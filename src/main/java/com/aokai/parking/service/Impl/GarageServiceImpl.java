@@ -1,5 +1,6 @@
 package com.aokai.parking.service.Impl;
 
+import com.aokai.parking.dao.CarMapper;
 import com.aokai.parking.dao.GarageMapper;
 import com.aokai.parking.model.dto.GarageInfo;
 import com.aokai.parking.model.qo.InsertGarageReq;
@@ -29,9 +30,11 @@ public class GarageServiceImpl implements GarageService {
     @Autowired
     private GarageMapper garageMapper;
 
+    @Autowired
+    private CarMapper carMapper;
+
     @Override
-    public GarageListResp getGarageList() {
-        GarageListResp garageListResp = new GarageListResp();
+    public List<GarageInfo> getGarageList() {
         List<GarageInfo> garageInfoList = new ArrayList<>();
         // 获取车库列表
         List<Garage> garageList = garageMapper.selectAll();
@@ -39,16 +42,17 @@ public class GarageServiceImpl implements GarageService {
             return null;
         }
         garageInfoList = BeanUtil.copyPropertiesByFastJson(garageList, GarageInfo.class);
-        garageListResp.setGarageInfoList(garageInfoList);
 
-        return garageListResp;
+        return garageInfoList;
     }
 
     @Override
     public Boolean deleteGarage(Integer garageId) {
         // 删除车库
         Integer delete = garageMapper.deleteByPrimaryKey(garageId);
-        return delete > 0;
+        // 删除车库里的车位
+        Integer deleteCar = carMapper.deleteCarByGarageId(garageId);
+        return delete > 0 && deleteCar > 0;
     }
 
     @Override

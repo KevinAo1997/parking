@@ -46,6 +46,7 @@ public class CarServiceImpl implements CarService {
     public Boolean insertCar(InsertCarReq insertCarReq) {
         Car car = new Car();
         BeanUtils.copyProperties(insertCarReq, car);
+        car.setCarStatus(1);
         // 新增车位
         Integer insert = carMapper.insert(car);
         return insert > 0;

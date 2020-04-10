@@ -14,8 +14,16 @@
     <result column="car_price_time" jdbcType="DOUBLE" property="carPriceTime" />
     <result column="garage_id" jdbcType="INTEGER" property="garageId" />
   </resultMap>
+  <update id="updateStatus">
+    update car set car_status = 0 where id = #{carId}
+  </update>
+
   <delete id="deleteCar">
     delete from car where id = #{carId}
+  </delete>
+
+  <delete id="deleteCarByGarageId">
+    delete from car where garage_id = #{garageId}
   </delete>
 
   <select id="getCarList" resultType="com.aokai.parking.po.Car">

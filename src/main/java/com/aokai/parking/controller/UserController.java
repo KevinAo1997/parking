@@ -1,6 +1,7 @@
 package com.aokai.parking.controller;
 
 import com.aokai.parking.enums.ApplicationEnum;
+import com.aokai.parking.model.qo.DeleteUserReq;
 import com.aokai.parking.model.qo.InsertUserReq;
 import com.aokai.parking.model.qo.PageReq;
 import com.aokai.parking.model.qo.UpdatePasswordReq;
@@ -96,14 +97,14 @@ public class UserController {
 
     /**
      * 删除用户
-     * @param userID
+     * @param deleteUserReq
      * @return
      */
     @RequestMapping(value = "/deleteUser", method = RequestMethod.POST)
     @ResponseBody
-    public Result deleteUser(@RequestBody @Validated Integer userID) {
+    public Result deleteUser(@RequestBody @Validated DeleteUserReq deleteUserReq) {
         // 删除用户
-        Boolean isDeleteUser = userService.deleteUser(userID);
+        Boolean isDeleteUser = userService.deleteUser(deleteUserReq.getUserId());
         if (isDeleteUser) {
             return new SuccessResult<>();
         }

@@ -37,4 +37,18 @@ public interface CarMapper extends Mapper<Car> {
      * @return
      */
     Integer deleteCar(@Param("carId") Integer carId);
+
+    /**
+     * 车位信息状态更改
+     * @param carId
+     * @return
+     */
+    Integer updateStatus(@Param("carId") Integer carId);
+
+    /**
+     * 删除车库里的车位
+     * @param garageId
+     * @return
+     */
+    Integer deleteCarByGarageId(@Param("garageId") Integer garageId);
 }

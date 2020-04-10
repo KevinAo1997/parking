@@ -22,4 +22,7 @@
   <select id="getTodayOrderList" resultType="com.aokai.parking.po.Order">
     select * from order where endTime &lt; #{endTime} and endTime &gt; #{startTime}
   </select>
+  <select id="getCarOrder" resultType="com.aokai.parking.po.Order">
+    select * from order where car_id = #{carId} and status = 0
+  </select>
 </mapper>

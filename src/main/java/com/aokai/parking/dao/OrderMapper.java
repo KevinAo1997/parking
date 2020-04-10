@@ -20,4 +20,11 @@ public interface OrderMapper extends Mapper<Order> {
      */
     List<Order> getTodayOrderList(@Param("startTime")LocalDateTime startTime,
             @Param("endTime") LocalDateTime endTime);
+
+    /**
+     * 获取当前车位车辆信息
+     * @param carId
+     * @return
+     */
+    Order getCarOrder(@Param("carId") Integer carId);
 }

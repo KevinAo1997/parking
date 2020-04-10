@@ -1,6 +1,7 @@
 package com.aokai.parking.controller;
 
 import com.aokai.parking.enums.ApplicationEnum;
+import com.aokai.parking.model.qo.DeleteCarReq;
 import com.aokai.parking.model.qo.GetCarListReq;
 import com.aokai.parking.model.qo.InsertCarReq;
 import com.aokai.parking.model.qo.PageReq;
@@ -97,28 +98,28 @@ public class CarController {
         // 更新车位信息
         Boolean updateCar = carService.updateCar(updateCarReq);
         if (updateCar) {
-            new SuccessResult<>();
+           return new SuccessResult<>();
         }
         return new FailResult<>();
     }
 
     /**
      * 删除车位信息
-     * @param carId
+     * @param deleteCarReq
      * @return
      */
     @RequestMapping(value = "/deleteCar", method = RequestMethod.POST)
     @ResponseBody
-    public Result deleteCar(@RequestBody @Validated Integer carId) {
+    public Result deleteCar(@RequestBody @Validated DeleteCarReq deleteCarReq) {
         // 检查车位是否已占用
-        Boolean isCarStatus = carService.checkCarStatus(carId);
+        Boolean isCarStatus = carService.checkCarStatus(deleteCarReq.getCarId());
         if (isCarStatus) {
             return new FailResult<>(ApplicationEnum.CAR_SATATUS_USING);
         }
         // 删除车位信息
-        Boolean deleteCar = carService.deleteCar(carId);
+        Boolean deleteCar = carService.deleteCar(deleteCarReq.getCarId());
         if (deleteCar) {
-            new SuccessResult<>();
+           return new SuccessResult<>();
         }
         return new FailResult<>();
     }

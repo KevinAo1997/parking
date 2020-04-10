@@ -1,8 +1,10 @@
 package com.aokai.parking.service;
 
+import com.aokai.parking.model.dto.GarageInfo;
 import com.aokai.parking.model.qo.InsertGarageReq;
 import com.aokai.parking.model.qo.updateGarageReq;
 import com.aokai.parking.model.vo.GarageListResp;
+import java.util.List;
 
 /**
  * Description :   .
@@ -16,7 +18,7 @@ public interface GarageService {
      * 获取车库列表
      * @return
      */
-    GarageListResp getGarageList();
+    List<GarageInfo> getGarageList();
 
     /**
      * 删除车库

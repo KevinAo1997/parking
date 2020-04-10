@@ -1,5 +1,7 @@
 package com.aokai.parking.service;
 
+import com.aokai.parking.model.qo.AddCarOrderReq;
+import com.aokai.parking.model.vo.GetCarOrderResp;
 import com.aokai.parking.model.vo.TodayOrderResp;
 
 /**
@@ -15,4 +17,18 @@ public interface OrderService {
      * @return
      */
     TodayOrderResp getTodayOrderList();
+
+    /**
+     * 获取当前车位车辆信息
+     * @param carId
+     * @return
+     */
+    GetCarOrderResp getCarOrder(Integer carId);
+
+    /**
+     * 车辆入库新增订单
+     * @param addCarOrderReq
+     * @return
+     */
+    Boolean addCarOrder(AddCarOrderReq addCarOrderReq);
 }

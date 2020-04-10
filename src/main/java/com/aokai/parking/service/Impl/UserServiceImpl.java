@@ -54,9 +54,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Boolean deleteUser(Integer userID) {
+    public Boolean deleteUser(Integer userId) {
         // 删除用户
-        Integer delete = userMapper.deleteUser(userID);
+        Integer delete = userMapper.deleteUser(userId);
         return delete > 0;
     }
 

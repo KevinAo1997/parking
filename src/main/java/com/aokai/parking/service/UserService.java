@@ -39,10 +39,10 @@ public interface UserService {
 
     /**
      * 删除用户
-     * @param userID
+     * @param userId
      * @return
      */
-    Boolean deleteUser(Integer userID);
+    Boolean deleteUser(Integer userId);
 
     /**
      * 判断用户名是否存在
