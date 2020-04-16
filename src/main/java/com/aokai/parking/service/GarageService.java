@@ -3,6 +3,7 @@ package com.aokai.parking.service;
 import com.aokai.parking.model.dto.GarageInfo;
 import com.aokai.parking.model.qo.garage.InsertGarageReq;
 import com.aokai.parking.model.qo.garage.updateGarageReq;
+import com.aokai.parking.po.Garage;
 import java.util.List;
 
 /**
@@ -46,4 +47,11 @@ public interface GarageService {
      * @return
      */
     Boolean insertGarage(InsertGarageReq insertGarageReq);
+
+    /**
+     * 获取具体车库信息
+     * @param garageId
+     * @return
+     */
+    Garage getGarage(Integer garageId);
 }

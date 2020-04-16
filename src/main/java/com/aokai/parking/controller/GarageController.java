@@ -3,12 +3,14 @@ package com.aokai.parking.controller;
 import com.aokai.parking.enums.ApplicationEnum;
 import com.aokai.parking.model.dto.GarageInfo;
 import com.aokai.parking.model.qo.garage.DeleteGarageReq;
+import com.aokai.parking.model.qo.garage.GetGarageReq;
 import com.aokai.parking.model.qo.garage.InsertGarageReq;
 import com.aokai.parking.model.qo.PageReq;
 import com.aokai.parking.model.qo.garage.updateGarageReq;
 import com.aokai.parking.model.vo.result.FailResult;
 import com.aokai.parking.model.vo.result.Result;
 import com.aokai.parking.model.vo.result.SuccessResult;
+import com.aokai.parking.po.Garage;
 import com.aokai.parking.service.GarageService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -53,6 +55,7 @@ public class GarageController {
         }
 
         PageInfo<GarageInfo> garageInfoPageInfo = new PageInfo<>(garageInfoList);
+        garageInfoPageInfo.setTotal(garageInfoList.size());
         return new SuccessResult<>(garageInfoPageInfo);
     }
 
@@ -109,6 +112,24 @@ public class GarageController {
         }
         return new FailResult<>();
     }
+
+    /**
+     * 获取具体车库信息
+     * @param getGarageReq
+     * @return
+     */
+    @RequestMapping(value = "/getGarage", method = RequestMethod.POST)
+    @ResponseBody
+    public Result getGarage(@RequestBody @Validated GetGarageReq getGarageReq) {
+        // 获取具体车库信息
+        Garage garage = garageService.getGarage(getGarageReq.getGarageId());
+        if (garage == null) {
+            return new FailResult<>();
+        }
+        return new SuccessResult<>(garage);
+    }
+
+
 
 
 

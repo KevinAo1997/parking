@@ -89,4 +89,11 @@ public class GarageServiceImpl implements GarageService {
         Integer insert = garageMapper.insert(garage);
         return insert > 0;
     }
+
+    @Override
+    public Garage getGarage(Integer garageId) {
+        // 获取具体车库信息
+        Garage garage = garageMapper.selectByPrimaryKey(garageId);
+        return garage;
+    }
 }
