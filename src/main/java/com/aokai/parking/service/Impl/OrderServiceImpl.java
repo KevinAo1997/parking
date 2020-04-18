@@ -67,9 +67,11 @@ public class OrderServiceImpl implements OrderService {
         }
         Integer carTotalCount = orderList.size();
         orderInfoList = BeanUtil.copyPropertiesByFastJson(orderList, OrderInfo.class);
+
+        Double costTotal = orderInfoList.stream().mapToDouble(OrderInfo::getCost).sum();
         todayOrderResp.setOrderInfoList(orderInfoList);
         todayOrderResp.setCarTotalCount(carTotalCount);
-
+        todayOrderResp.setCostTotal(costTotal);
         return todayOrderResp;
     }
 

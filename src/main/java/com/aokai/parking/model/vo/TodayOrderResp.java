@@ -31,5 +31,5 @@ public class TodayOrderResp implements Serializable {
     /**
      * 今日总营业额
      */
-    private Integer costTotal;
+    private Double costTotal;
 }
