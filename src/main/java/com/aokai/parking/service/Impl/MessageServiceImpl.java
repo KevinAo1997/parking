@@ -8,6 +8,7 @@ import com.aokai.parking.model.vo.MessageListResp;
 import com.aokai.parking.po.Message;
 import com.aokai.parking.po.User;
 import com.aokai.parking.service.MessageService;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -42,7 +43,7 @@ public class MessageServiceImpl implements MessageService {
         message.setUserId(insertMessageReq.getUserID());
         message.setTitle(insertMessageReq.getTitle());
         message.setContent(insertMessageReq.getContent());
-        message.setCreattime(new Date());
+        message.setCreattime(LocalDateTime.now());
 
         // 新增公告
         Integer insertMessage = messageMapper.insert(message);

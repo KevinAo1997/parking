@@ -1975,3 +1975,32 @@ java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check th
 2020-04-18 22:09:24,316 INFO  10088 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting ProtocolHandler ["http-nio-8086"]
 2020-04-18 22:09:24,355 INFO  10088 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start/204 : Tomcat started on port(s): 8086 (http) with context path ''
 2020-04-18 22:09:24,361 INFO  10088 --- [main] org.springframework.boot.StartupInfoLogger.logStarted/61 : Started ParkingApplication in 5.159 seconds (JVM running for 7.658)
+2020-04-18 22:16:51,744 INFO  10088 --- [SpringContextShutdownHook] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown/218 : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-18 22:17:01,192 INFO  4680 --- [main] org.springframework.boot.StartupInfoLogger.logStarting/55 : Starting ParkingApplication on DESKTOP-HQCJC2V with PID 4680 (D:\IDEAWork\parking\target\classes started by lenovo in D:\IDEAWork\parking)
+2020-04-18 22:17:01,202 INFO  4680 --- [main] org.springframework.boot.SpringApplication.logStartupProfileInfo/651 : No active profile set, falling back to default profiles: default
+2020-04-18 22:17:03,351 WARN  4680 --- [main] org.mybatis.logging.Logger.warn/44 : No MyBatis mapper was found in '[com.aokai.parking]' package. Please check your configuration.
+2020-04-18 22:17:04,205 INFO  4680 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize/92 : Tomcat initialized with port(s): 8086 (http)
+2020-04-18 22:17:04,218 INFO  4680 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing ProtocolHandler ["http-nio-8086"]
+2020-04-18 22:17:04,219 INFO  4680 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting service [Tomcat]
+2020-04-18 22:17:04,219 INFO  4680 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-18 22:17:04,384 INFO  4680 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring embedded WebApplicationContext
+2020-04-18 22:17:04,385 INFO  4680 --- [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext/284 : Root WebApplicationContext: initialization completed in 3000 ms
+2020-04-18 22:17:05,476 INFO  4680 --- [main] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize/181 : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-18 22:17:05,607 INFO  4680 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-18 22:17:05,608 INFO  4680 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-18 22:17:05,610 INFO  4680 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-18 22:17:05,610 INFO  4680 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache/83 : Clear EntityHelper entityTableMap cache.
+2020-04-18 22:17:05,775 INFO  4680 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting ProtocolHandler ["http-nio-8086"]
+2020-04-18 22:17:05,818 INFO  4680 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start/204 : Tomcat started on port(s): 8086 (http) with context path ''
+2020-04-18 22:17:05,824 INFO  4680 --- [main] org.springframework.boot.StartupInfoLogger.logStarted/61 : Started ParkingApplication in 5.945 seconds (JVM running for 7.303)
+2020-04-18 22:17:52,538 INFO  4680 --- [http-nio-8086-exec-2] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-18 22:17:52,539 INFO  4680 --- [http-nio-8086-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean/525 : Initializing Servlet 'dispatcherServlet'
+2020-04-18 22:17:52,555 INFO  4680 --- [http-nio-8086-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean/547 : Completed initialization in 16 ms
+2020-04-18 22:17:56,665 INFO  4680 --- [http-nio-8086-exec-2] com.zaxxer.hikari.HikariDataSource.getConnection/110 : HikariPool-1 - Starting...
+2020-04-18 22:17:57,756 INFO  4680 --- [http-nio-8086-exec-2] com.zaxxer.hikari.HikariDataSource.getConnection/123 : HikariPool-1 - Start completed.
+2020-04-18 22:17:57,840 DEBUG 4680 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,title,creatTime,user_id,content FROM message 
+2020-04-18 22:17:58,261 DEBUG 4680 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 
+2020-04-18 22:17:58,615 DEBUG 4680 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 3
+2020-04-18 22:18:10,119 DEBUG 4680 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select * from user where id in ( ? , ? , ? ) 
+2020-04-18 22:18:10,123 DEBUG 4680 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer), 1(Integer), 1(Integer)
+2020-04-18 22:18:10,166 DEBUG 4680 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1

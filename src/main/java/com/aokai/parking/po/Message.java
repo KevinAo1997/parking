@@ -1,5 +1,6 @@
 package com.aokai.parking.po;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import javax.persistence.*;
 
@@ -20,7 +21,7 @@ public class Message {
      * 创建时间
      */
     @Column(name = "creatTime")
-    private Date creattime;
+    private LocalDateTime creattime;
 
     /**
      * 用户ID
@@ -74,7 +75,7 @@ public class Message {
      *
      * @return creatTime - 创建时间
      */
-    public Date getCreattime() {
+    public LocalDateTime getCreattime() {
         return creattime;
     }
 
@@ -83,7 +84,7 @@ public class Message {
      *
      * @param creattime 创建时间
      */
-    public void setCreattime(Date creattime) {
+    public void setCreattime(LocalDateTime creattime) {
         this.creattime = creattime;
     }
 
