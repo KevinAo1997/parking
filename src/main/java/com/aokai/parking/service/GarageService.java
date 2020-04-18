@@ -3,6 +3,7 @@ package com.aokai.parking.service;
 import com.aokai.parking.model.dto.GarageInfo;
 import com.aokai.parking.model.qo.garage.InsertGarageReq;
 import com.aokai.parking.model.qo.garage.updateGarageReq;
+import com.aokai.parking.model.vo.GarageNameListResp;
 import com.aokai.parking.model.vo.TotalCarInfoResp;
 import com.aokai.parking.po.Garage;
 import com.github.pagehelper.PageInfo;
@@ -68,5 +69,5 @@ public interface GarageService {
      * 获取车库名称列表
      * @return
      */
-    HashMap<Integer, String> getGarageNameList();
+    GarageNameListResp getGarageNameList();
 }

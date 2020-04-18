@@ -3,8 +3,10 @@ package com.aokai.parking.service.Impl;
 import com.aokai.parking.dao.CarMapper;
 import com.aokai.parking.dao.GarageMapper;
 import com.aokai.parking.model.dto.GarageInfo;
+import com.aokai.parking.model.dto.GarageNameAndIdInfo;
 import com.aokai.parking.model.qo.garage.InsertGarageReq;
 import com.aokai.parking.model.qo.garage.updateGarageReq;
+import com.aokai.parking.model.vo.GarageNameListResp;
 import com.aokai.parking.model.vo.TotalCarInfoResp;
 import com.aokai.parking.po.Car;
 import com.aokai.parking.po.Garage;
@@ -130,17 +132,25 @@ public class GarageServiceImpl implements GarageService {
     }
 
     @Override
-    public HashMap<Integer, String> getGarageNameList() {
-        HashMap<Integer, String> garageMap = new HashMap<>();
+    public GarageNameListResp getGarageNameList() {
+        GarageNameListResp garageNameListResp = new GarageNameListResp();
+        List<GarageNameAndIdInfo> garageNameAndIdInfoList = new ArrayList<>();
         // 获取车库
         List<Garage> garageList = garageMapper.selectAll();
         // 获取车库名称列表
         if (CollectionUtils.isEmpty(garageList)) {
             return null;
         }
+        // 遍历
         for (Garage garage : garageList) {
-            garageMap.put(garage.getId(), garage.getGarageName());
+            GarageNameAndIdInfo garageNameAndIdInfo = new GarageNameAndIdInfo();
+            garageNameAndIdInfo.setGarageId(garage.getId());
+            garageNameAndIdInfo.setGarageName(garage.getGarageName());
+
+            garageNameAndIdInfoList.add(garageNameAndIdInfo);
         }
-        return garageMap;
+        garageNameListResp.setGarageNameAndIdInfos(garageNameAndIdInfoList);
+
+        return garageNameListResp;
     }
 }

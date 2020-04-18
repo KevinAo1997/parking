@@ -7,6 +7,7 @@ import com.aokai.parking.model.qo.garage.DeleteGarageReq;
 import com.aokai.parking.model.qo.garage.GetGarageReq;
 import com.aokai.parking.model.qo.garage.InsertGarageReq;
 import com.aokai.parking.model.qo.garage.updateGarageReq;
+import com.aokai.parking.model.vo.GarageNameListResp;
 import com.aokai.parking.model.vo.TotalCarInfoResp;
 import com.aokai.parking.model.vo.result.FailResult;
 import com.aokai.parking.model.vo.result.Result;
@@ -149,11 +150,11 @@ public class GarageController {
     @ResponseBody
     public Result getGarageNameList() {
         // 获取车库名称列表
-        HashMap<Integer, String> garageNameMap = garageService.getGarageNameList();
-        if (garageNameMap == null) {
+        GarageNameListResp garageNameListResp = garageService.getGarageNameList();
+        if (garageNameListResp == null) {
             return new FailResult<>();
         }
-        return new SuccessResult<>(garageNameMap);
+        return new SuccessResult<>(garageNameListResp);
     }
 
 
