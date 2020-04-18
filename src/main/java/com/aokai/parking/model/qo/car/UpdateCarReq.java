@@ -39,7 +39,7 @@ public class UpdateCarReq implements Serializable {
     /**
      * 价格
      */
-    private Double carPrice;
+    private Double c;
 
     /**
      * 小时

@@ -47,7 +47,7 @@ public class UserController {
      * @param userReq
      * @return
      */
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @RequestMapping(value = "c", method = RequestMethod.POST)
     @ResponseBody
     public Result login(@RequestBody @Validated UserReq userReq) {
         // 通过账号密码获取用户信息

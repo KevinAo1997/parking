@@ -1,5 +1,6 @@
 package com.aokai.parking.model.vo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -32,11 +33,13 @@ public class OutCarOrderResp implements Serializable {
     /**
      * 开始时间
      */
+    @JsonFormat(shape=JsonFormat.Shape.STRING,pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private LocalDateTime starttime;
 
     /**
      * 结束时间
      */
+    @JsonFormat(shape=JsonFormat.Shape.STRING,pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private LocalDateTime endtime;
 
     /**

@@ -1,6 +1,8 @@
 package com.aokai.parking.model.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 import lombok.Data;
 import lombok.ToString;
@@ -45,12 +47,14 @@ public class OrderInfo implements Serializable {
     /**
      * 开始时间
      */
-    private Date starttime;
+    @JsonFormat(shape=JsonFormat.Shape.STRING,pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
+    private LocalDateTime starttime;
 
     /**
      * 结束时间
      */
-    private Date endtime;
+    @JsonFormat(shape=JsonFormat.Shape.STRING,pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
+    private LocalDateTime endtime;
 
     /**
      * 花费

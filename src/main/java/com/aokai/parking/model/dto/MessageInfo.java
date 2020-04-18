@@ -1,6 +1,8 @@
 package com.aokai.parking.model.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 import lombok.Data;
 import lombok.ToString;
@@ -30,7 +32,8 @@ public class MessageInfo implements Serializable {
     /**
      * 创建时间
      */
-    private Date creattime;
+    @JsonFormat(shape=JsonFormat.Shape.STRING,pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
+    private LocalDateTime creattime;
 
     /**
      * 用户ID
