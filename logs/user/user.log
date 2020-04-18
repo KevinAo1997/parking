@@ -99,3 +99,932 @@
 2020-04-19 01:55:29,196 DEBUG 6692 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select * from orders where endTime < ? and endTime > ? 
 2020-04-19 01:55:29,526 DEBUG 6692 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 2020-04-19T23:59:59.999999999(LocalDateTime), 2020-04-19T00:00(LocalDateTime)
 2020-04-19 01:55:29,830 DEBUG 6692 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-19 01:59:13,822 DEBUG 6692 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: INSERT INTO orders ( id,province,carNumber,customerName,customerPhone,startTime,endTime,cost,time,status,garage_id,car_id,user_id ) VALUES( ?,?,?,?,?,?,?,?,?,?,?,?,? ) 
+2020-04-19 01:59:13,834 DEBUG 6692 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: null, 沪(String), A88888(String), aokkk(String), (String), 2020-04-19T01:59:10.854(LocalDateTime), null, null, null, 0(Integer), 18(Integer), 3(Integer), 1(Integer)
+2020-04-19 01:59:13,918 DEBUG 6692 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==    Updates: 1
+2020-04-19 01:59:17,048 DEBUG 6692 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: update car set car_status = 0 where id = ? 
+2020-04-19 01:59:17,051 DEBUG 6692 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 3(Integer)
+2020-04-19 01:59:17,120 DEBUG 6692 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==    Updates: 1
+2020-04-19 02:23:09,037 WARN  6692 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run/779 : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m39s765ms956µs700ns).
+2020-04-19 02:24:46,006 WARN  6692 --- [http-nio-8086-exec-5] com.zaxxer.hikari.pool.PoolBase.isConnectionAlive/180 : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4d92efc8 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-19 02:24:46,014 WARN  6692 --- [http-nio-8086-exec-5] com.zaxxer.hikari.pool.PoolBase.isConnectionAlive/180 : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@55fcb02 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-19 02:24:46,020 WARN  6692 --- [http-nio-8086-exec-5] com.zaxxer.hikari.pool.PoolBase.isConnectionAlive/180 : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5fe998ce (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-19 02:24:46,026 WARN  6692 --- [http-nio-8086-exec-5] com.zaxxer.hikari.pool.PoolBase.isConnectionAlive/180 : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@433f1a94 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-19 02:24:46,031 WARN  6692 --- [http-nio-8086-exec-5] com.zaxxer.hikari.pool.PoolBase.isConnectionAlive/180 : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4e0b23d (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-19 02:24:46,036 WARN  6692 --- [http-nio-8086-exec-5] com.zaxxer.hikari.pool.PoolBase.isConnectionAlive/180 : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@7f9c7e78 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-19 02:24:46,042 WARN  6692 --- [http-nio-8086-exec-5] com.zaxxer.hikari.pool.PoolBase.isConnectionAlive/180 : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6c20a6ad (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-19 02:24:46,047 WARN  6692 --- [http-nio-8086-exec-5] com.zaxxer.hikari.pool.PoolBase.isConnectionAlive/180 : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5770fa07 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-19 02:24:46,053 WARN  6692 --- [http-nio-8086-exec-5] com.zaxxer.hikari.pool.PoolBase.isConnectionAlive/180 : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5680cb8e (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-19 02:24:46,059 WARN  6692 --- [http-nio-8086-exec-5] com.zaxxer.hikari.pool.PoolBase.isConnectionAlive/180 : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4af31098 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-19 02:24:46,339 DEBUG 6692 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select * from orders where car_id = ? and status = 0 
+2020-04-19 02:24:46,345 DEBUG 6692 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 4(Integer)
+2020-04-19 02:24:46,400 DEBUG 6692 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-19 02:25:32,801 WARN  6692 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run/779 : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=53s759ms39µs300ns).
+2020-04-19 02:25:32,860 INFO  6692 --- [SpringContextShutdownHook] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown/218 : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-19 02:25:32,862 INFO  6692 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource.close/350 : HikariPool-1 - Shutdown initiated...
+2020-04-19 02:25:33,063 INFO  6692 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource.close/352 : HikariPool-1 - Shutdown completed.
+2020-04-19 02:25:39,834 INFO  1672 --- [main] org.springframework.boot.StartupInfoLogger.logStarting/55 : Starting ParkingApplication on DESKTOP-HQCJC2V with PID 1672 (D:\IDEAWork\parking\target\classes started by lenovo in D:\IDEAWork\parking)
+2020-04-19 02:25:39,839 INFO  1672 --- [main] org.springframework.boot.SpringApplication.logStartupProfileInfo/651 : No active profile set, falling back to default profiles: default
+2020-04-19 02:25:40,751 WARN  1672 --- [main] org.mybatis.logging.Logger.warn/44 : No MyBatis mapper was found in '[com.aokai.parking]' package. Please check your configuration.
+2020-04-19 02:25:41,215 INFO  1672 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize/92 : Tomcat initialized with port(s): 8086 (http)
+2020-04-19 02:25:41,225 INFO  1672 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing ProtocolHandler ["http-nio-8086"]
+2020-04-19 02:25:41,225 INFO  1672 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting service [Tomcat]
+2020-04-19 02:25:41,226 INFO  1672 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-19 02:25:41,349 INFO  1672 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring embedded WebApplicationContext
+2020-04-19 02:25:41,350 INFO  1672 --- [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext/284 : Root WebApplicationContext: initialization completed in 1381 ms
+2020-04-19 02:25:42,260 INFO  1672 --- [main] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize/181 : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-19 02:25:42,400 INFO  1672 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-19 02:25:42,401 INFO  1672 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-19 02:25:42,401 INFO  1672 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-19 02:25:42,402 INFO  1672 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache/83 : Clear EntityHelper entityTableMap cache.
+2020-04-19 02:25:42,510 INFO  1672 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting ProtocolHandler ["http-nio-8086"]
+2020-04-19 02:25:42,538 INFO  1672 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start/204 : Tomcat started on port(s): 8086 (http) with context path ''
+2020-04-19 02:25:42,542 INFO  1672 --- [main] org.springframework.boot.StartupInfoLogger.logStarted/61 : Started ParkingApplication in 3.334 seconds (JVM running for 4.51)
+2020-04-19 02:25:47,232 INFO  1672 --- [http-nio-8086-exec-1] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-19 02:25:47,232 INFO  1672 --- [http-nio-8086-exec-1] org.springframework.web.servlet.FrameworkServlet.initServletBean/525 : Initializing Servlet 'dispatcherServlet'
+2020-04-19 02:25:47,243 INFO  1672 --- [http-nio-8086-exec-1] org.springframework.web.servlet.FrameworkServlet.initServletBean/547 : Completed initialization in 10 ms
+2020-04-19 02:25:50,149 INFO  1672 --- [http-nio-8086-exec-1] com.zaxxer.hikari.HikariDataSource.getConnection/110 : HikariPool-1 - Starting...
+2020-04-19 02:25:51,008 INFO  1672 --- [http-nio-8086-exec-1] com.zaxxer.hikari.HikariDataSource.getConnection/123 : HikariPool-1 - Start completed.
+2020-04-19 02:25:51,019 DEBUG 1672 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select * from orders where car_id = ? and status = 0 
+2020-04-19 02:25:51,058 DEBUG 1672 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 4(Integer)
+2020-04-19 02:25:51,129 DEBUG 1672 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-19 02:27:35,882 DEBUG 1672 --- [http-nio-8086-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select * from orders where province = ? and carNumber = ? and status = 0 
+2020-04-19 02:27:35,884 DEBUG 1672 --- [http-nio-8086-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 沪(String), A88888(String)
+2020-04-19 02:27:35,924 DEBUG 1672 --- [http-nio-8086-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 2
+2020-04-19 02:28:28,635 WARN  1672 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run/779 : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m7s522ms10µs400ns).
+2020-04-19 02:28:28,649 ERROR 1672 --- [http-nio-8086-exec-3] org.apache.juli.logging.DirectJDKLog.log/175 : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 2] with root cause
+org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 2
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy67.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:57)
+	at com.sun.proxy.$Proxy80.getOrderByCarNum(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy81.getOrderByCarNum(Unknown Source)
+	at com.aokai.parking.service.Impl.OrderServiceImpl.updateCarOrder(OrderServiceImpl.java:114)
+	at com.aokai.parking.controller.OrderController.addCarOrder(OrderController.java:88)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-04-19 02:29:48,080 DEBUG 1672 --- [http-nio-8086-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select * from orders where province = ? and carNumber = ? and status = 0 
+2020-04-19 02:29:48,083 DEBUG 1672 --- [http-nio-8086-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 沪(String), A88888(String)
+2020-04-19 02:29:48,134 DEBUG 1672 --- [http-nio-8086-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-19 02:29:53,692 DEBUG 1672 --- [http-nio-8086-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,code,username,password,name,sex,email,phone,headImg,description,status,type FROM user WHERE id = ? 
+2020-04-19 02:29:53,694 DEBUG 1672 --- [http-nio-8086-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: null
+2020-04-19 02:29:53,726 DEBUG 1672 --- [http-nio-8086-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 0
+2020-04-19 02:29:53,729 DEBUG 1672 --- [http-nio-8086-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,car_name,car_location,car_status,car_type,car_price,car_price_time,garage_id FROM car WHERE id = ? 
+2020-04-19 02:29:53,731 DEBUG 1672 --- [http-nio-8086-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: null
+2020-04-19 02:29:53,763 DEBUG 1672 --- [http-nio-8086-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 0
+2020-04-19 02:29:53,766 DEBUG 1672 --- [http-nio-8086-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,garage_name,garage_location,garage_description,garage_total,garage_code,garage_price,garage_pricetime FROM garage WHERE id = ? 
+2020-04-19 02:29:53,768 DEBUG 1672 --- [http-nio-8086-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: null
+2020-04-19 02:29:53,801 DEBUG 1672 --- [http-nio-8086-exec-4] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 0
+2020-04-19 02:29:53,802 ERROR 1672 --- [http-nio-8086-exec-4] org.apache.juli.logging.DirectJDKLog.log/175 : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at com.aokai.parking.service.Impl.OrderServiceImpl.updateCarOrder(OrderServiceImpl.java:138)
+	at com.aokai.parking.controller.OrderController.addCarOrder(OrderController.java:88)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-04-19 02:33:25,982 DEBUG 1672 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select * from orders where province = ? and carNumber = ? and status = 0 
+2020-04-19 02:33:25,989 DEBUG 1672 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 沪(String), WE0712(String)
+2020-04-19 02:33:26,038 DEBUG 1672 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-19 02:33:28,206 DEBUG 1672 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,code,username,password,name,sex,email,phone,headImg,description,status,type FROM user WHERE id = ? 
+2020-04-19 02:33:28,211 DEBUG 1672 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: null
+2020-04-19 02:33:28,250 DEBUG 1672 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 0
+2020-04-19 02:34:32,785 WARN  1672 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run/779 : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m34s140ms674µs400ns).
+2020-04-19 02:34:33,812 DEBUG 1672 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,car_name,car_location,car_status,car_type,car_price,car_price_time,garage_id FROM car WHERE id = ? 
+2020-04-19 02:34:33,816 DEBUG 1672 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: null
+2020-04-19 02:34:33,858 DEBUG 1672 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 0
+2020-04-19 02:34:55,879 DEBUG 1672 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,garage_name,garage_location,garage_description,garage_total,garage_code,garage_price,garage_pricetime FROM garage WHERE id = ? 
+2020-04-19 02:34:55,882 DEBUG 1672 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: null
+2020-04-19 02:34:55,920 DEBUG 1672 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 0
+2020-04-19 02:34:58,509 ERROR 1672 --- [http-nio-8086-exec-5] org.apache.juli.logging.DirectJDKLog.log/175 : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at com.aokai.parking.service.Impl.OrderServiceImpl.updateCarOrder(OrderServiceImpl.java:138)
+	at com.aokai.parking.controller.OrderController.addCarOrder(OrderController.java:88)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-04-19 02:35:14,455 DEBUG 1672 --- [http-nio-8086-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select * from orders where province = ? and carNumber = ? and status = 0 
+2020-04-19 02:35:14,461 DEBUG 1672 --- [http-nio-8086-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 沪(String), WE0712(String)
+2020-04-19 02:35:14,525 DEBUG 1672 --- [http-nio-8086-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-19 02:38:53,435 WARN  1672 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run/779 : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m49s667ms878µs700ns).
+2020-04-19 02:38:53,468 DEBUG 1672 --- [http-nio-8086-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,code,username,password,name,sex,email,phone,headImg,description,status,type FROM user WHERE id = ? 
+2020-04-19 02:38:53,469 DEBUG 1672 --- [http-nio-8086-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: null
+2020-04-19 02:38:53,501 DEBUG 1672 --- [http-nio-8086-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 0
+2020-04-19 02:38:53,505 DEBUG 1672 --- [http-nio-8086-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,car_name,car_location,car_status,car_type,car_price,car_price_time,garage_id FROM car WHERE id = ? 
+2020-04-19 02:38:53,506 DEBUG 1672 --- [http-nio-8086-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: null
+2020-04-19 02:38:53,537 DEBUG 1672 --- [http-nio-8086-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 0
+2020-04-19 02:38:53,542 DEBUG 1672 --- [http-nio-8086-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,garage_name,garage_location,garage_description,garage_total,garage_code,garage_price,garage_pricetime FROM garage WHERE id = ? 
+2020-04-19 02:38:53,543 DEBUG 1672 --- [http-nio-8086-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: null
+2020-04-19 02:38:53,575 DEBUG 1672 --- [http-nio-8086-exec-6] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 0
+2020-04-19 02:38:53,576 ERROR 1672 --- [http-nio-8086-exec-6] org.apache.juli.logging.DirectJDKLog.log/175 : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at com.aokai.parking.service.Impl.OrderServiceImpl.updateCarOrder(OrderServiceImpl.java:138)
+	at com.aokai.parking.controller.OrderController.addCarOrder(OrderController.java:88)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-04-19 02:39:22,180 DEBUG 1672 --- [http-nio-8086-exec-7] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select * from orders where province = ? and carNumber = ? and status = 0 
+2020-04-19 02:39:22,182 DEBUG 1672 --- [http-nio-8086-exec-7] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 沪(String), WE0712(String)
+2020-04-19 02:39:22,228 DEBUG 1672 --- [http-nio-8086-exec-7] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-19 02:41:05,101 WARN  1672 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run/779 : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m11s666ms274µs300ns).
+2020-04-19 02:41:05,139 DEBUG 1672 --- [http-nio-8086-exec-7] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,code,username,password,name,sex,email,phone,headImg,description,status,type FROM user WHERE id = ? 
+2020-04-19 02:41:05,140 DEBUG 1672 --- [http-nio-8086-exec-7] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: null
+2020-04-19 02:41:05,148 INFO  1672 --- [SpringContextShutdownHook] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown/218 : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-19 02:41:05,150 INFO  1672 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource.close/350 : HikariPool-1 - Shutdown initiated...
+2020-04-19 02:41:05,168 WARN  1672 --- [http-nio-8086-exec-7] com.zaxxer.hikari.pool.ProxyConnection.checkException/157 : HikariPool-1 - Connection com.mysql.cj.jdbc.ConnectionImpl@145190f1 marked as broken because of SQLSTATE(08S01), ErrorCode(0)
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 21 milliseconds ago. The last packet sent successfully to the server was 53 milliseconds ago.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy98.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:108)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy96.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy67.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:57)
+	at com.sun.proxy.$Proxy78.selectByPrimaryKey(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy79.selectByPrimaryKey(Unknown Source)
+	at com.aokai.parking.service.Impl.OrderServiceImpl.updateCarOrder(OrderServiceImpl.java:119)
+	at com.aokai.parking.controller.OrderController.addCarOrder(OrderController.java:88)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 21 milliseconds ago. The last packet sent successfully to the server was 53 milliseconds ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:539)
+	at com.mysql.cj.protocol.a.NativeProtocol.checkErrorMessage(NativeProtocol.java:703)
+	at com.mysql.cj.protocol.a.NativeProtocol.sendCommand(NativeProtocol.java:642)
+	at com.mysql.cj.protocol.a.NativeProtocol.sendQueryPacket(NativeProtocol.java:941)
+	at com.mysql.cj.NativeSession.execSQL(NativeSession.java:1075)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:930)
+	... 94 common frames omitted
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at com.mysql.cj.protocol.ReadAheadInputStream.fill(ReadAheadInputStream.java:107)
+	at com.mysql.cj.protocol.ReadAheadInputStream.readFromUnderlyingStreamIfNecessary(ReadAheadInputStream.java:150)
+	at com.mysql.cj.protocol.ReadAheadInputStream.read(ReadAheadInputStream.java:180)
+	at java.io.FilterInputStream.read(FilterInputStream.java:133)
+	at com.mysql.cj.protocol.FullReadInputStream.readFully(FullReadInputStream.java:64)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:63)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:45)
+	at com.mysql.cj.protocol.a.TimeTrackingPacketReader.readHeader(TimeTrackingPacketReader.java:52)
+	at com.mysql.cj.protocol.a.TimeTrackingPacketReader.readHeader(TimeTrackingPacketReader.java:41)
+	at com.mysql.cj.protocol.a.MultiPacketReader.readHeader(MultiPacketReader.java:54)
+	at com.mysql.cj.protocol.a.MultiPacketReader.readHeader(MultiPacketReader.java:44)
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:533)
+	... 99 common frames omitted
+2020-04-19 02:41:05,172 INFO  1672 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource.close/352 : HikariPool-1 - Shutdown completed.
+2020-04-19 02:41:05,242 WARN  1672 --- [http-nio-8086-exec-7] org.springframework.jdbc.support.SQLErrorCodesFactory.getErrorCodes/221 : Error while extracting database name - falling back to empty error codes
+org.springframework.jdbc.support.MetaDataAccessException: Could not get Connection for extracting meta-data; nested exception is org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: HikariDataSource HikariDataSource (HikariPool-1) has been closed.
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:345)
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:373)
+	at org.springframework.jdbc.support.SQLErrorCodesFactory.getErrorCodes(SQLErrorCodesFactory.java:215)
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.setDataSource(SQLErrorCodeSQLExceptionTranslator.java:137)
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.<init>(SQLErrorCodeSQLExceptionTranslator.java:100)
+	at org.mybatis.spring.MyBatisExceptionTranslator.initExceptionTranslator(MyBatisExceptionTranslator.java:88)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy67.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:57)
+	at com.sun.proxy.$Proxy78.selectByPrimaryKey(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy79.selectByPrimaryKey(Unknown Source)
+	at com.aokai.parking.service.Impl.OrderServiceImpl.updateCarOrder(OrderServiceImpl.java:119)
+	at com.aokai.parking.controller.OrderController.addCarOrder(OrderController.java:88)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: HikariDataSource HikariDataSource (HikariPool-1) has been closed.
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:82)
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:336)
+	... 75 common frames omitted
+Caused by: java.sql.SQLException: HikariDataSource HikariDataSource (HikariPool-1) has been closed.
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:96)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79)
+	... 76 common frames omitted
+2020-04-19 02:41:11,673 INFO  10988 --- [main] org.springframework.boot.StartupInfoLogger.logStarting/55 : Starting ParkingApplication on DESKTOP-HQCJC2V with PID 10988 (D:\IDEAWork\parking\target\classes started by lenovo in D:\IDEAWork\parking)
+2020-04-19 02:41:11,678 INFO  10988 --- [main] org.springframework.boot.SpringApplication.logStartupProfileInfo/651 : No active profile set, falling back to default profiles: default
+2020-04-19 02:41:12,752 WARN  10988 --- [main] org.mybatis.logging.Logger.warn/44 : No MyBatis mapper was found in '[com.aokai.parking]' package. Please check your configuration.
+2020-04-19 02:41:13,282 INFO  10988 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize/92 : Tomcat initialized with port(s): 8086 (http)
+2020-04-19 02:41:13,292 INFO  10988 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing ProtocolHandler ["http-nio-8086"]
+2020-04-19 02:41:13,294 INFO  10988 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting service [Tomcat]
+2020-04-19 02:41:13,294 INFO  10988 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-19 02:41:13,424 INFO  10988 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring embedded WebApplicationContext
+2020-04-19 02:41:13,425 INFO  10988 --- [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext/284 : Root WebApplicationContext: initialization completed in 1624 ms
+2020-04-19 02:41:14,284 INFO  10988 --- [main] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize/181 : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-19 02:41:14,415 INFO  10988 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-19 02:41:14,416 INFO  10988 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-19 02:41:14,417 INFO  10988 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-19 02:41:14,418 INFO  10988 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache/83 : Clear EntityHelper entityTableMap cache.
+2020-04-19 02:41:14,543 INFO  10988 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting ProtocolHandler ["http-nio-8086"]
+2020-04-19 02:41:14,578 INFO  10988 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start/204 : Tomcat started on port(s): 8086 (http) with context path ''
+2020-04-19 02:41:14,584 INFO  10988 --- [main] org.springframework.boot.StartupInfoLogger.logStarted/61 : Started ParkingApplication in 3.623 seconds (JVM running for 4.804)
+2020-04-19 02:41:19,659 INFO  10988 --- [http-nio-8086-exec-1] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-19 02:41:19,660 INFO  10988 --- [http-nio-8086-exec-1] org.springframework.web.servlet.FrameworkServlet.initServletBean/525 : Initializing Servlet 'dispatcherServlet'
+2020-04-19 02:41:19,669 INFO  10988 --- [http-nio-8086-exec-1] org.springframework.web.servlet.FrameworkServlet.initServletBean/547 : Completed initialization in 9 ms
+2020-04-19 02:41:24,113 INFO  10988 --- [http-nio-8086-exec-1] com.zaxxer.hikari.HikariDataSource.getConnection/110 : HikariPool-1 - Starting...
+2020-04-19 02:41:25,190 INFO  10988 --- [http-nio-8086-exec-1] com.zaxxer.hikari.HikariDataSource.getConnection/123 : HikariPool-1 - Start completed.
+2020-04-19 02:41:25,266 DEBUG 10988 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select province,carNumber,customerName,customerPhone,startTime,endTime,cost,time,status,garage_id AS garageId, car_id AS carId, user_id AS userID from orders where province = ? and carNumber = ? and status = 0 
+2020-04-19 02:41:25,602 DEBUG 10988 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 沪(String), WE0712(String)
+2020-04-19 02:41:25,920 DEBUG 10988 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-19 02:41:38,603 DEBUG 10988 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,code,username,password,name,sex,email,phone,headImg,description,status,type FROM user WHERE id = ? 
+2020-04-19 02:41:38,606 DEBUG 10988 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-19 02:41:38,645 DEBUG 10988 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-19 02:41:42,211 DEBUG 10988 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,car_name,car_location,car_status,car_type,car_price,car_price_time,garage_id FROM car WHERE id = ? 
+2020-04-19 02:41:42,212 DEBUG 10988 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 5(Integer)
+2020-04-19 02:41:42,255 DEBUG 10988 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-19 02:41:44,677 DEBUG 10988 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,garage_name,garage_location,garage_description,garage_total,garage_code,garage_price,garage_pricetime FROM garage WHERE id = ? 
+2020-04-19 02:41:44,679 DEBUG 10988 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 18(Integer)
+2020-04-19 02:41:44,717 DEBUG 10988 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-19 02:41:48,913 DEBUG 10988 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: UPDATE car SET car_status = ? WHERE id = ? 
+2020-04-19 02:41:48,915 DEBUG 10988 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer), 5(Integer)
+2020-04-19 02:41:48,985 DEBUG 10988 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==    Updates: 1
+2020-04-19 02:42:21,799 WARN  10988 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run/779 : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=56s507ms469µs400ns).
+2020-04-19 02:42:21,864 DEBUG 10988 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: UPDATE orders SET endTime = ?,cost = ?,time = ?,status = ? WHERE id = ? 
+2020-04-19 02:42:21,868 DEBUG 10988 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 2020-04-19T02:41:49.630(LocalDateTime), 26.0(Double), 13.0(Double), 1(Integer), null
+2020-04-19 02:42:21,941 DEBUG 10988 --- [http-nio-8086-exec-1] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==    Updates: 0
+2020-04-19 02:44:56,790 DEBUG 10988 --- [http-nio-8086-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select province,carNumber,customerName,customerPhone,startTime,endTime,cost,time,status,garage_id AS garageId, car_id AS carId, user_id AS userID from orders where province = ? and carNumber = ? and status = 0 
+2020-04-19 02:44:56,792 DEBUG 10988 --- [http-nio-8086-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 沪(String), WE0712(String)
+2020-04-19 02:44:56,833 DEBUG 10988 --- [http-nio-8086-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-19 02:44:58,261 DEBUG 10988 --- [http-nio-8086-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,code,username,password,name,sex,email,phone,headImg,description,status,type FROM user WHERE id = ? 
+2020-04-19 02:44:58,264 DEBUG 10988 --- [http-nio-8086-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-19 02:44:58,305 DEBUG 10988 --- [http-nio-8086-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-19 02:45:00,562 DEBUG 10988 --- [http-nio-8086-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,car_name,car_location,car_status,car_type,car_price,car_price_time,garage_id FROM car WHERE id = ? 
+2020-04-19 02:45:00,564 DEBUG 10988 --- [http-nio-8086-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 5(Integer)
+2020-04-19 02:45:00,608 DEBUG 10988 --- [http-nio-8086-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-19 02:45:39,790 WARN  10988 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run/779 : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=47s965ms757µs).
+2020-04-19 02:45:39,838 DEBUG 10988 --- [http-nio-8086-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,garage_name,garage_location,garage_description,garage_total,garage_code,garage_price,garage_pricetime FROM garage WHERE id = ? 
+2020-04-19 02:45:39,838 DEBUG 10988 --- [http-nio-8086-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 18(Integer)
+2020-04-19 02:45:39,839 INFO  10988 --- [SpringContextShutdownHook] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown/218 : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-19 02:45:39,840 INFO  10988 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource.close/350 : HikariPool-1 - Shutdown initiated...
+2020-04-19 02:45:39,856 INFO  10988 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource.close/352 : HikariPool-1 - Shutdown completed.
+2020-04-19 02:45:39,862 WARN  10988 --- [http-nio-8086-exec-3] com.zaxxer.hikari.pool.ProxyConnection.checkException/157 : HikariPool-1 - Connection com.mysql.cj.jdbc.ConnectionImpl@430f3ba marked as broken because of SQLSTATE(08S01), ErrorCode(0)
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 17 milliseconds ago. The last packet sent successfully to the server was 63 milliseconds ago.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy98.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:108)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy96.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy67.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:57)
+	at com.sun.proxy.$Proxy74.selectByPrimaryKey(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy75.selectByPrimaryKey(Unknown Source)
+	at com.aokai.parking.service.Impl.OrderServiceImpl.updateCarOrder(OrderServiceImpl.java:132)
+	at com.aokai.parking.controller.OrderController.addCarOrder(OrderController.java:88)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 17 milliseconds ago. The last packet sent successfully to the server was 63 milliseconds ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:539)
+	at com.mysql.cj.protocol.a.NativeProtocol.checkErrorMessage(NativeProtocol.java:703)
+	at com.mysql.cj.protocol.a.NativeProtocol.sendCommand(NativeProtocol.java:642)
+	at com.mysql.cj.protocol.a.NativeProtocol.sendQueryPacket(NativeProtocol.java:941)
+	at com.mysql.cj.NativeSession.execSQL(NativeSession.java:1075)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:930)
+	... 94 common frames omitted
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at com.mysql.cj.protocol.ReadAheadInputStream.fill(ReadAheadInputStream.java:107)
+	at com.mysql.cj.protocol.ReadAheadInputStream.readFromUnderlyingStreamIfNecessary(ReadAheadInputStream.java:150)
+	at com.mysql.cj.protocol.ReadAheadInputStream.read(ReadAheadInputStream.java:180)
+	at java.io.FilterInputStream.read(FilterInputStream.java:133)
+	at com.mysql.cj.protocol.FullReadInputStream.readFully(FullReadInputStream.java:64)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:63)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:45)
+	at com.mysql.cj.protocol.a.TimeTrackingPacketReader.readHeader(TimeTrackingPacketReader.java:52)
+	at com.mysql.cj.protocol.a.TimeTrackingPacketReader.readHeader(TimeTrackingPacketReader.java:41)
+	at com.mysql.cj.protocol.a.MultiPacketReader.readHeader(MultiPacketReader.java:54)
+	at com.mysql.cj.protocol.a.MultiPacketReader.readHeader(MultiPacketReader.java:44)
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:533)
+	... 99 common frames omitted
+2020-04-19 02:45:39,925 WARN  10988 --- [http-nio-8086-exec-3] org.springframework.jdbc.support.SQLErrorCodesFactory.getErrorCodes/221 : Error while extracting database name - falling back to empty error codes
+org.springframework.jdbc.support.MetaDataAccessException: Could not get Connection for extracting meta-data; nested exception is org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: HikariDataSource HikariDataSource (HikariPool-1) has been closed.
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:345)
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:373)
+	at org.springframework.jdbc.support.SQLErrorCodesFactory.getErrorCodes(SQLErrorCodesFactory.java:215)
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.setDataSource(SQLErrorCodeSQLExceptionTranslator.java:137)
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.<init>(SQLErrorCodeSQLExceptionTranslator.java:100)
+	at org.mybatis.spring.MyBatisExceptionTranslator.initExceptionTranslator(MyBatisExceptionTranslator.java:88)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy67.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:57)
+	at com.sun.proxy.$Proxy74.selectByPrimaryKey(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy75.selectByPrimaryKey(Unknown Source)
+	at com.aokai.parking.service.Impl.OrderServiceImpl.updateCarOrder(OrderServiceImpl.java:132)
+	at com.aokai.parking.controller.OrderController.addCarOrder(OrderController.java:88)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: HikariDataSource HikariDataSource (HikariPool-1) has been closed.
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:82)
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:336)
+	... 75 common frames omitted
+Caused by: java.sql.SQLException: HikariDataSource HikariDataSource (HikariPool-1) has been closed.
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:96)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79)
+	... 76 common frames omitted
+2020-04-19 02:45:44,677 INFO  15212 --- [main] org.springframework.boot.StartupInfoLogger.logStarting/55 : Starting ParkingApplication on DESKTOP-HQCJC2V with PID 15212 (D:\IDEAWork\parking\target\classes started by lenovo in D:\IDEAWork\parking)
+2020-04-19 02:45:44,682 INFO  15212 --- [main] org.springframework.boot.SpringApplication.logStartupProfileInfo/651 : No active profile set, falling back to default profiles: default
+2020-04-19 02:45:45,679 WARN  15212 --- [main] org.mybatis.logging.Logger.warn/44 : No MyBatis mapper was found in '[com.aokai.parking]' package. Please check your configuration.
+2020-04-19 02:45:46,109 INFO  15212 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize/92 : Tomcat initialized with port(s): 8086 (http)
+2020-04-19 02:45:46,119 INFO  15212 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing ProtocolHandler ["http-nio-8086"]
+2020-04-19 02:45:46,120 INFO  15212 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting service [Tomcat]
+2020-04-19 02:45:46,121 INFO  15212 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-19 02:45:46,242 INFO  15212 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring embedded WebApplicationContext
+2020-04-19 02:45:46,243 INFO  15212 --- [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext/284 : Root WebApplicationContext: initialization completed in 1424 ms
+2020-04-19 02:45:47,077 INFO  15212 --- [main] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize/181 : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-19 02:45:47,221 INFO  15212 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-19 02:45:47,222 INFO  15212 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-19 02:45:47,223 INFO  15212 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-19 02:45:47,224 INFO  15212 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache/83 : Clear EntityHelper entityTableMap cache.
+2020-04-19 02:45:47,332 INFO  15212 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting ProtocolHandler ["http-nio-8086"]
+2020-04-19 02:45:47,367 INFO  15212 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start/204 : Tomcat started on port(s): 8086 (http) with context path ''
+2020-04-19 02:45:47,374 INFO  15212 --- [main] org.springframework.boot.StartupInfoLogger.logStarted/61 : Started ParkingApplication in 3.395 seconds (JVM running for 4.745)
+2020-04-19 02:45:49,524 INFO  15212 --- [http-nio-8086-exec-2] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-19 02:45:49,524 INFO  15212 --- [http-nio-8086-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean/525 : Initializing Servlet 'dispatcherServlet'
+2020-04-19 02:45:49,535 INFO  15212 --- [http-nio-8086-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean/547 : Completed initialization in 10 ms
+2020-04-19 02:45:53,474 INFO  15212 --- [http-nio-8086-exec-2] com.zaxxer.hikari.HikariDataSource.getConnection/110 : HikariPool-1 - Starting...
+2020-04-19 02:45:54,540 INFO  15212 --- [http-nio-8086-exec-2] com.zaxxer.hikari.HikariDataSource.getConnection/123 : HikariPool-1 - Start completed.
+2020-04-19 02:45:54,615 DEBUG 15212 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: select id,province,carNumber,customerName,customerPhone,startTime,endTime,cost,time,status,garage_id AS garageId, car_id AS carId, user_id AS userID from orders where province = ? and carNumber = ? and status = 0 
+2020-04-19 02:45:54,949 DEBUG 15212 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 沪(String), WE0712(String)
+2020-04-19 02:45:55,264 DEBUG 15212 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-19 02:45:56,427 DEBUG 15212 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,code,username,password,name,sex,email,phone,headImg,description,status,type FROM user WHERE id = ? 
+2020-04-19 02:45:56,429 DEBUG 15212 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer)
+2020-04-19 02:45:56,475 DEBUG 15212 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-19 02:45:57,234 DEBUG 15212 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,car_name,car_location,car_status,car_type,car_price,car_price_time,garage_id FROM car WHERE id = ? 
+2020-04-19 02:45:57,236 DEBUG 15212 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 5(Integer)
+2020-04-19 02:45:57,278 DEBUG 15212 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-19 02:45:58,094 DEBUG 15212 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: SELECT id,garage_name,garage_location,garage_description,garage_total,garage_code,garage_price,garage_pricetime FROM garage WHERE id = ? 
+2020-04-19 02:45:58,096 DEBUG 15212 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 18(Integer)
+2020-04-19 02:45:58,136 DEBUG 15212 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==      Total: 1
+2020-04-19 02:45:59,714 DEBUG 15212 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: UPDATE car SET car_status = ? WHERE id = ? 
+2020-04-19 02:45:59,716 DEBUG 15212 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 1(Integer), 5(Integer)
+2020-04-19 02:45:59,784 DEBUG 15212 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==    Updates: 1
+2020-04-19 02:46:07,366 DEBUG 15212 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: UPDATE orders SET endTime = ?,cost = ?,time = ?,status = ? WHERE id = ? 
+2020-04-19 02:46:07,371 DEBUG 15212 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: 2020-04-19T02:45:59.983(LocalDateTime), 26.0(Double), 13.0(Double), 1(Integer), 6(Integer)
+2020-04-19 02:46:07,454 DEBUG 15212 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==    Updates: 1
+2020-04-19 02:48:46,065 WARN  15212 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run/779 : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=51s418ms144µs400ns).
+2020-04-19 02:48:46,144 DEBUG 15212 --- [http-nio-8086-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: INSERT INTO orders ( id,province,carNumber,customerName,customerPhone,startTime,endTime,cost,time,status,garage_id,car_id,user_id ) VALUES( ?,?,?,?,?,?,?,?,?,?,?,?,? ) 
+2020-04-19 02:48:46,167 DEBUG 15212 --- [http-nio-8086-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: null, 沪(String), A77777(String), null, null, 2020-04-19T02:48:03.559(LocalDateTime), null, null, null, 0(Integer), null, null, null
+2020-04-19 02:48:46,257 DEBUG 15212 --- [http-nio-8086-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==    Updates: 1
+2020-04-19 02:48:51,166 DEBUG 15212 --- [http-nio-8086-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: update car set car_status = 0 where id = ? 
+2020-04-19 02:48:51,168 DEBUG 15212 --- [http-nio-8086-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: null
+2020-04-19 02:48:51,244 DEBUG 15212 --- [http-nio-8086-exec-3] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==    Updates: 0
+2020-04-19 02:49:56,165 DEBUG 15212 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: INSERT INTO orders ( id,province,carNumber,customerName,customerPhone,startTime,endTime,cost,time,status,garage_id,car_id,user_id ) VALUES( ?,?,?,?,?,?,?,?,?,?,?,?,? ) 
+2020-04-19 02:49:56,192 DEBUG 15212 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: null, 沪(String), A77777(String), null, null, 2020-04-19T02:49:51.204(LocalDateTime), null, null, null, 0(Integer), null, null, null
+2020-04-19 02:49:56,288 DEBUG 15212 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==    Updates: 1
+2020-04-19 02:50:19,063 DEBUG 15212 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: update car set car_status = 0 where id = ? 
+2020-04-19 02:50:19,065 DEBUG 15212 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: null
+2020-04-19 02:50:19,134 DEBUG 15212 --- [http-nio-8086-exec-5] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==    Updates: 0
+2020-04-19 02:54:33,545 WARN  15212 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run/779 : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m42s341ms555µs).
+2020-04-19 02:54:33,602 INFO  15212 --- [SpringContextShutdownHook] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown/218 : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-19 02:54:33,603 INFO  15212 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource.close/350 : HikariPool-1 - Shutdown initiated...
+2020-04-19 02:54:33,616 INFO  15212 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource.close/352 : HikariPool-1 - Shutdown completed.
+2020-04-19 02:54:38,296 INFO  11580 --- [main] org.springframework.boot.StartupInfoLogger.logStarting/55 : Starting ParkingApplication on DESKTOP-HQCJC2V with PID 11580 (D:\IDEAWork\parking\target\classes started by lenovo in D:\IDEAWork\parking)
+2020-04-19 02:54:38,317 INFO  11580 --- [main] org.springframework.boot.SpringApplication.logStartupProfileInfo/651 : No active profile set, falling back to default profiles: default
+2020-04-19 02:54:39,882 WARN  11580 --- [main] org.mybatis.logging.Logger.warn/44 : No MyBatis mapper was found in '[com.aokai.parking]' package. Please check your configuration.
+2020-04-19 02:54:40,348 INFO  11580 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize/92 : Tomcat initialized with port(s): 8086 (http)
+2020-04-19 02:54:40,361 INFO  11580 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing ProtocolHandler ["http-nio-8086"]
+2020-04-19 02:54:40,362 INFO  11580 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting service [Tomcat]
+2020-04-19 02:54:40,363 INFO  11580 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-19 02:54:40,490 INFO  11580 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring embedded WebApplicationContext
+2020-04-19 02:54:40,492 INFO  11580 --- [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext/284 : Root WebApplicationContext: initialization completed in 2038 ms
+2020-04-19 02:54:41,362 INFO  11580 --- [main] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize/181 : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-19 02:54:41,508 INFO  11580 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-19 02:54:41,509 INFO  11580 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-19 02:54:41,510 INFO  11580 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache/60 : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-19 02:54:41,510 INFO  11580 --- [main] tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache/83 : Clear EntityHelper entityTableMap cache.
+2020-04-19 02:54:41,629 INFO  11580 --- [main] org.apache.juli.logging.DirectJDKLog.log/173 : Starting ProtocolHandler ["http-nio-8086"]
+2020-04-19 02:54:41,653 INFO  11580 --- [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start/204 : Tomcat started on port(s): 8086 (http) with context path ''
+2020-04-19 02:54:41,657 INFO  11580 --- [main] org.springframework.boot.StartupInfoLogger.logStarted/61 : Started ParkingApplication in 4.1 seconds (JVM running for 5.5)
+2020-04-19 02:55:01,462 INFO  11580 --- [http-nio-8086-exec-2] org.apache.juli.logging.DirectJDKLog.log/173 : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-19 02:55:01,463 INFO  11580 --- [http-nio-8086-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean/525 : Initializing Servlet 'dispatcherServlet'
+2020-04-19 02:55:01,470 INFO  11580 --- [http-nio-8086-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean/547 : Completed initialization in 7 ms
+2020-04-19 02:55:06,005 INFO  11580 --- [http-nio-8086-exec-2] com.zaxxer.hikari.HikariDataSource.getConnection/110 : HikariPool-1 - Starting...
+2020-04-19 02:55:06,542 INFO  11580 --- [http-nio-8086-exec-2] com.zaxxer.hikari.HikariDataSource.getConnection/123 : HikariPool-1 - Start completed.
+2020-04-19 02:55:06,556 DEBUG 11580 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: INSERT INTO orders ( id,province,carNumber,customerName,customerPhone,startTime,endTime,cost,time,status,garage_id,car_id,user_id ) VALUES( ?,?,?,?,?,?,?,?,?,?,?,?,? ) 
+2020-04-19 02:55:06,599 DEBUG 11580 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: null, 沪(String), A77777(String), null, null, 2020-04-19T02:55:05.949(LocalDateTime), null, null, null, 0(Integer), null, null, null
+2020-04-19 02:55:06,677 DEBUG 11580 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==    Updates: 1
+2020-04-19 02:55:06,682 DEBUG 11580 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==>  Preparing: update car set car_status = 0 where id = ? 
+2020-04-19 02:55:06,683 DEBUG 11580 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : ==> Parameters: null
+2020-04-19 02:55:06,748 DEBUG 11580 --- [http-nio-8086-exec-2] org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug/143 : <==    Updates: 0

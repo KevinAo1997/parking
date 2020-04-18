@@ -29,6 +29,6 @@
     select * from orders where car_id = #{carId} and status = 0
   </select>
   <select id="getOrderByCarNum" resultType="com.aokai.parking.po.Order">
-    select * from orders where province = #{province} and carNumber = #{carnumber} and status = 0
+    select id,province,carNumber,customerName,customerPhone,startTime,endTime,cost,time,status,garage_id AS garageId, car_id AS carId, user_id AS userID from orders where province = #{province} and carNumber = #{carnumber} and status = 0
   </select>
 </mapper>

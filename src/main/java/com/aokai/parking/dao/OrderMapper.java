@@ -47,5 +47,5 @@ public interface OrderMapper extends Mapper<Order> {
      */
     Order getOrderByCarNum(@Param("province") String province, @Param("carnumber") String carnumber);
 
-    List<Order> selectOrder();
+//    List<Order> selectOrder();
 }
