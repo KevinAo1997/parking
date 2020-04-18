@@ -12,7 +12,9 @@ import com.aokai.parking.service.GarageService;
 import com.aokai.parking.utils.BeanUtil;
 import com.github.pagehelper.PageInfo;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.BeanUtils;
@@ -125,5 +127,20 @@ public class GarageServiceImpl implements GarageService {
         totalCarInfoResp.setUnUsedCarNum(unUsedCarNum);
         totalCarInfoResp.setUsingCarNum(usingCarNum);
         return totalCarInfoResp;
+    }
+
+    @Override
+    public HashMap<Integer, String> getGarageNameList() {
+        HashMap<Integer, String> garageMap = new HashMap<>();
+        // 获取车库
+        List<Garage> garageList = garageMapper.selectAll();
+        // 获取车库名称列表
+        if (CollectionUtils.isEmpty(garageList)) {
+            return null;
+        }
+        for (Garage garage : garageList) {
+            garageMap.put(garage.getId(), garage.getGarageName());
+        }
+        return garageMap;
     }
 }

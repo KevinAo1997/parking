@@ -48,9 +48,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Boolean updateStatus(Integer userID, Integer status) {
+    public Boolean updateStatus(Integer userId, Integer status) {
         // 更改用户状态
-        Integer update = userMapper.updateStatus(userID, status);
+        Integer update = userMapper.updateStatus(userId, status);
         return update > 0;
     }
 
@@ -115,16 +115,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User searchUser(SearchUserReq searchUserReq) {
-        String code = searchUserReq.getCode();
-        String username = searchUserReq.getUsername();
-        String name = searchUserReq.getName();
+    public List<User> searchUser(SearchUserReq searchUserReq) {
+        String code = "%" + searchUserReq.getCode();
+        String username = "%" + searchUserReq.getUsername();
+        String name = "%" + searchUserReq.getName();
 
         // 模糊搜索用户
-        User user = userMapper.searchUser(code, username, name);
-        if (user == null) {
+        List<User> userList = userMapper.searchUser(code, username, name);
+        if (userList == null) {
             return null;
         }
-        return user;
+        return userList;
     }
 }

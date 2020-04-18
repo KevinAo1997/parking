@@ -32,11 +32,11 @@ public interface UserService {
 
     /**
      * 更改用户状态
-     * @param userID
+     * @param userId
      * @param status
      * @return
      */
-    Boolean updateStatus(Integer userID, Integer status);
+    Boolean updateStatus(Integer userId, Integer status);
 
     /**
      * 删除用户
@@ -93,5 +93,5 @@ public interface UserService {
      * @param searchUserReq
      * @return
      */
-    User searchUser(SearchUserReq searchUserReq);
+    List<User> searchUser(SearchUserReq searchUserReq);
 }

@@ -15,6 +15,8 @@ import com.aokai.parking.po.Garage;
 import com.aokai.parking.service.GarageService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import java.util.HashMap;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -137,6 +139,21 @@ public class GarageController {
             return new FailResult<>();
         }
         return new SuccessResult<>(totalCarInfoResp);
+    }
+
+    /**
+     * 获取车库名称列表
+     * @return
+     */
+    @RequestMapping(value = "/getGarageNameList", method = RequestMethod.POST)
+    @ResponseBody
+    public Result getGarageNameList() {
+        // 获取车库名称列表
+        HashMap<Integer, String> garageNameMap = garageService.getGarageNameList();
+        if (garageNameMap == null) {
+            return new FailResult<>();
+        }
+        return new SuccessResult<>(garageNameMap);
     }
 
 

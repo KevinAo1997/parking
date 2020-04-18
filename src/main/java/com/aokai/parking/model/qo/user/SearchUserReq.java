@@ -1,5 +1,6 @@
 package com.aokai.parking.model.qo.user;
 
+import com.aokai.parking.model.qo.PageReq;
 import java.io.Serializable;
 import lombok.Data;
 import lombok.ToString;
@@ -12,7 +13,7 @@ import lombok.ToString;
  */
 @Data
 @ToString
-public class SearchUserReq implements Serializable {
+public class SearchUserReq extends PageReq implements Serializable {
 
     private static final long serialVersionUID = -4088646062377032650L;
 

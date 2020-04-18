@@ -3,6 +3,7 @@ package com.aokai.parking.controller;
 import com.aokai.parking.enums.ApplicationEnum;
 import com.aokai.parking.model.qo.car.DeleteCarReq;
 import com.aokai.parking.model.qo.car.GetCarListReq;
+import com.aokai.parking.model.qo.car.GetIndexCarListReq;
 import com.aokai.parking.model.qo.car.InsertCarReq;
 import com.aokai.parking.model.qo.car.UpdateCarReq;
 import com.aokai.parking.model.vo.result.FailResult;

@@ -27,11 +27,11 @@ public interface UserMapper extends Mapper<User> {
 
     /**
      * 更改用户状态
-     * @param userID
+     * @param userId
      * @param status
      * @return
      */
-    Integer updateStatus(@Param("userID") Integer userID, @Param("status") Integer status);
+    Integer updateStatus(@Param("userID") Integer userId, @Param("status") Integer status);
 
     /**
      * 删除用户
@@ -76,6 +76,6 @@ public interface UserMapper extends Mapper<User> {
      * @param name
      * @return
      */
-    User searchUser(
+    List<User> searchUser(
             @Param("code") String code, @Param("username") String username, @Param("name") String name);
 }

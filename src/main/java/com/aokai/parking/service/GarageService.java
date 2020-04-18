@@ -6,6 +6,7 @@ import com.aokai.parking.model.qo.garage.updateGarageReq;
 import com.aokai.parking.model.vo.TotalCarInfoResp;
 import com.aokai.parking.po.Garage;
 import com.github.pagehelper.PageInfo;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -62,4 +63,10 @@ public interface GarageService {
      * @return
      */
     TotalCarInfoResp getTotalCarInfo();
+
+    /**
+     * 获取车库名称列表
+     * @return
+     */
+    HashMap<Integer, String> getGarageNameList();
 }

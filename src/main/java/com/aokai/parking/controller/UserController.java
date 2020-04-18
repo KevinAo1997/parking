@@ -202,10 +202,15 @@ public class UserController {
      */
     @RequestMapping(value = "/searchUser", method = RequestMethod.POST)
     @ResponseBody
-    public Result searchUser(@RequestBody @Validated SearchUserReq searchUserReq) {
+    public Result searchUser(@RequestBody SearchUserReq searchUserReq) {
+        Integer pageNum = searchUserReq.getPageNum() == null ? 1 : searchUserReq.getPageNum();
+        Integer pageSize = searchUserReq.getPageSize() == null ? 10 : searchUserReq.getPageSize();
+        PageHelper.startPage(pageNum, pageSize);
         // 搜索用户
-        User user = userService.searchUser(searchUserReq);
-        return new SuccessResult<>(user);
+        List<User> userList = userService.searchUser(searchUserReq);
+        // 分页获取
+        PageInfo<User> userPageInfo = new PageInfo<>(userList);
+        return new SuccessResult<>(userPageInfo);
     }
 
 
