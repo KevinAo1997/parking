@@ -31,10 +31,10 @@ public class InsertGarageReq implements Serializable {
      */
     private String garageDescription;
 
-    /**
-     * 车位总数
-     */
-    private Integer garageTotal;
+//    /**
+//     * 车位总数
+//     */
+//    private Integer garageTotal;
 
     /**
      * 价格

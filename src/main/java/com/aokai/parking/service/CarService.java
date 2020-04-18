@@ -51,8 +51,10 @@ public interface CarService {
 
     /**
      * 删除车位信息
+     *
+     * @param garageId
      * @param carId
      * @return
      */
-    Boolean deleteCar(Integer carId);
+    Boolean deleteCar(Integer garageId, Integer carId);
 }

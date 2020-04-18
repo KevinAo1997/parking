@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import javax.persistence.*;
 
-@Table(name = "order")
+@Table(name = "orders")
 public class Order {
     /**
      * 主键

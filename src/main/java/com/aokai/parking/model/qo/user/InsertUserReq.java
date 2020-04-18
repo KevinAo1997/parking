@@ -58,7 +58,6 @@ public class InsertUserReq implements Serializable {
     /**
      * 签名描述
      */
-    @NotBlank
     private String description;
 
 }

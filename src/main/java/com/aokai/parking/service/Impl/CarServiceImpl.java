@@ -1,9 +1,11 @@
 package com.aokai.parking.service.Impl;
 
 import com.aokai.parking.dao.CarMapper;
+import com.aokai.parking.dao.GarageMapper;
 import com.aokai.parking.model.qo.car.InsertCarReq;
 import com.aokai.parking.model.qo.car.UpdateCarReq;
 import com.aokai.parking.po.Car;
+import com.aokai.parking.po.Garage;
 import com.aokai.parking.service.CarService;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +26,9 @@ public class CarServiceImpl implements CarService {
 
     @Autowired
     private CarMapper carMapper;
+
+    @Autowired
+    private GarageMapper garageMapper;
 
     @Override
     public List<Car> getCarList(Integer garageId) {
@@ -49,6 +54,11 @@ public class CarServiceImpl implements CarService {
         car.setCarStatus(1);
         // 新增车位
         Integer insert = carMapper.insert(car);
+        // 车库车位总数加1
+        Garage garage = garageMapper.selectByPrimaryKey(insertCarReq.getGarageId());
+        garage.setGarageTotal(garage.getGarageTotal() + 1);
+        garageMapper.updateByPrimaryKeySelective(garage);
+
         return insert > 0;
     }
 
@@ -68,9 +78,14 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public Boolean deleteCar(Integer carId) {
+    public Boolean deleteCar(Integer garageId, Integer carId) {
         // 删除车位信息
         Integer delete = carMapper.deleteCar(carId);
+
+        // 车库车位总数减1
+        Garage garage = garageMapper.selectByPrimaryKey(garageId);
+        garage.setGarageTotal(garage.getGarageTotal() - 1);
+        garageMapper.updateByPrimaryKeySelective(garage);
         return delete > 0;
     }
 }

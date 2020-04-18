@@ -115,7 +115,7 @@ public class CarController {
             return new FailResult<>(ApplicationEnum.CAR_SATATUS_USING);
         }
         // 删除车位信息
-        Boolean deleteCar = carService.deleteCar(deleteCarReq.getCarId());
+        Boolean deleteCar = carService.deleteCar(deleteCarReq.getCarId(),deleteCarReq.getGarageId());
         if (deleteCar) {
            return new SuccessResult<>();
         }

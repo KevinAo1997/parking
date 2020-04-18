@@ -92,6 +92,7 @@ public class GarageServiceImpl implements GarageService {
     public Boolean insertGarage(InsertGarageReq insertGarageReq) {
         Garage garage = new Garage();
         BeanUtils.copyProperties(insertGarageReq, garage);
+        garage.setGarageTotal(0);
         // 新增车库信息
         Integer insert = garageMapper.insert(garage);
         return insert > 0;

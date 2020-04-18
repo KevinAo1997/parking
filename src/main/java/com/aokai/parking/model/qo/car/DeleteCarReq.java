@@ -20,4 +20,9 @@ public class DeleteCarReq implements Serializable {
      * 车位DI
      */
     private Integer carId;
+
+    /**
+     *
+     */
+    private Integer garageId;
 }
