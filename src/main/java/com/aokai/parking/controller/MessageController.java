@@ -1,5 +1,6 @@
 package com.aokai.parking.controller;
 
+import com.aokai.parking.model.qo.message.DeleteMessageReq;
 import com.aokai.parking.model.qo.message.InsertMessageReq;
 import com.aokai.parking.model.vo.MessageListResp;
 import com.aokai.parking.model.vo.result.FailResult;
@@ -46,14 +47,14 @@ public class MessageController {
 
     /**
      * 删除公告
-     * @param messageId
+     * @param deleteMessageReq
      * @return
      */
     @RequestMapping(value = "/deleteMessage", method = RequestMethod.POST)
     @ResponseBody
-    public Result deleteMessage(@RequestBody @Validated Integer messageId) {
+    public Result deleteMessage(@RequestBody @Validated DeleteMessageReq deleteMessageReq) {
         // 删除公告
-        Boolean isDeleteMessage = messageService.deleteMessage(messageId);
+        Boolean isDeleteMessage = messageService.deleteMessage(deleteMessageReq.getMessageId());
         if (isDeleteMessage) {
             return new SuccessResult<>();
         }

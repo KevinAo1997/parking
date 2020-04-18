@@ -2,6 +2,7 @@ package com.aokai.parking.service.Impl;
 
 import com.aokai.parking.dao.CarMapper;
 import com.aokai.parking.dao.GarageMapper;
+import com.aokai.parking.enums.CarTypeEnum;
 import com.aokai.parking.model.qo.car.InsertCarReq;
 import com.aokai.parking.model.qo.car.UpdateCarReq;
 import com.aokai.parking.po.Car;
