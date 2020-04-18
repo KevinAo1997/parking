@@ -51,4 +51,16 @@ public interface CarMapper extends Mapper<Car> {
      * @return
      */
     Integer deleteCarByGarageId(@Param("garageId") Integer garageId);
+
+    /**
+     * 获取车位总数量
+     * @return
+     */
+    Integer selectTotal();
+
+    /**
+     * 获取已使用的车辆数量
+     * @return
+     */
+    Integer selectUsingCarTotal();
 }

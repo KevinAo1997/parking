@@ -7,6 +7,7 @@ import com.aokai.parking.model.qo.PageReq;
 import com.aokai.parking.model.qo.user.SearchUserReq;
 import com.aokai.parking.model.qo.user.UpdatePasswordReq;
 import com.aokai.parking.model.qo.user.UpdateUserReq;
+import com.aokai.parking.model.qo.user.UpdateUserStatusReq;
 import com.aokai.parking.model.qo.user.UpdateUserTypeReq;
 import com.aokai.parking.model.qo.user.UserReq;
 import com.aokai.parking.model.vo.result.FailResult;
@@ -80,16 +81,15 @@ public class UserController {
 
 
     /**
-     * 更改用户权限类型
-     * @param userID
-     * @param status
+     * 更改用户状态
+     * @param updateUserStatusReq
      * @return
      */
     @RequestMapping(value = "/updateStatus", method = RequestMethod.POST)
     @ResponseBody
-    public Result updateStatus(@RequestBody @Validated Integer userID, Integer status) {
+    public Result updateStatus(@RequestBody @Validated UpdateUserStatusReq updateUserStatusReq) {
         // 更改用户状态
-        Boolean isUpdateStatus = userService.updateStatus(userID, status);
+        Boolean isUpdateStatus = userService.updateStatus(updateUserStatusReq.getUserId(), updateUserStatusReq.getStatus());
         if (isUpdateStatus) {
             return new SuccessResult<>();
         }

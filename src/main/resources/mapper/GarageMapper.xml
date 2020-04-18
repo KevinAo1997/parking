@@ -17,4 +17,8 @@
   <select id="checkGarageName" resultType="com.aokai.parking.po.Garage">
     select * from garage where garage_name = #{garageName}
   </select>
+
+  <select id="selectTotal" resultType="java.lang.Integer">
+    select count(*) from garage
+  </select>
 </mapper>

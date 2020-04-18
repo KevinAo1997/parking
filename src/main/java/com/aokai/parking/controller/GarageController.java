@@ -2,11 +2,12 @@ package com.aokai.parking.controller;
 
 import com.aokai.parking.enums.ApplicationEnum;
 import com.aokai.parking.model.dto.GarageInfo;
+import com.aokai.parking.model.qo.PageReq;
 import com.aokai.parking.model.qo.garage.DeleteGarageReq;
 import com.aokai.parking.model.qo.garage.GetGarageReq;
 import com.aokai.parking.model.qo.garage.InsertGarageReq;
-import com.aokai.parking.model.qo.PageReq;
 import com.aokai.parking.model.qo.garage.updateGarageReq;
+import com.aokai.parking.model.vo.TotalCarInfoResp;
 import com.aokai.parking.model.vo.result.FailResult;
 import com.aokai.parking.model.vo.result.Result;
 import com.aokai.parking.model.vo.result.SuccessResult;
@@ -14,8 +15,6 @@ import com.aokai.parking.po.Garage;
 import com.aokai.parking.service.GarageService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import java.util.List;
-import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -38,7 +37,7 @@ public class GarageController {
     private GarageService garageService;
 
     /**
-     * 获取车库列表
+     * 分页获取车库列表
      * @return
      */
     @RequestMapping(value = "/getGarageList", method = RequestMethod.POST)
@@ -48,14 +47,9 @@ public class GarageController {
         int pageNum = pageReq.getPageNum() == null ? 1 : pageReq.getPageNum();
         int pageSize = pageReq.getPageSize() == null ? 10 : pageReq.getPageSize();
         PageHelper.startPage(pageNum, pageSize);
-        // 获取车库列表
-        List<GarageInfo> garageInfoList = garageService.getGarageList();
-        if (CollectionUtils.isEmpty(garageInfoList)) {
-            return new SuccessResult<>(null);
-        }
+        // 分页获取车库列表
+        PageInfo<GarageInfo> garageInfoPageInfo = garageService.getGarageList();
 
-        PageInfo<GarageInfo> garageInfoPageInfo = new PageInfo<>(garageInfoList);
-        garageInfoPageInfo.setTotal(garageInfoList.size());
         return new SuccessResult<>(garageInfoPageInfo);
     }
 
@@ -129,6 +123,21 @@ public class GarageController {
         return new SuccessResult<>(garage);
     }
 
+
+    /**
+     * 停车场车库车位信息
+     * @return
+     */
+    @RequestMapping(value = "/getTotalCarInfo", method = RequestMethod.POST)
+    @ResponseBody
+    public Result getTotalCarInfo() {
+        // 停车场车库车位信息
+        TotalCarInfoResp totalCarInfoResp = garageService.getTotalCarInfo();
+        if (totalCarInfoResp == null) {
+            return new FailResult<>();
+        }
+        return new SuccessResult<>(totalCarInfoResp);
+    }
 
 
 

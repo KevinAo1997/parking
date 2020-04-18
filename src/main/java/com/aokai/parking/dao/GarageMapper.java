@@ -14,4 +14,10 @@ public interface GarageMapper extends Mapper<Garage> {
      * @return
      */
     Garage checkGarageName(@Param("garageName") String garageName);
+
+    /**
+     * 停车场车库车位信息
+     * @return
+     */
+    Integer selectTotal();
 }

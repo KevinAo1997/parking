@@ -48,9 +48,10 @@
 
   <select id="selectUserByUserIds" resultType="com.aokai.parking.po.User">
     select * from user where id in
-    <foreach collection="list" item="userIds" open="(" close=")" separator=",">
+    <foreach collection="userIds" item="userIds" open="(" close=")" separator=",">
     #{userIds}
   </foreach>
+
   </select>
   <select id="searchUser" resultType="com.aokai.parking.po.User">
     select * from user

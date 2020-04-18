@@ -37,4 +37,12 @@
   <select id="checkCarStatus" resultType="java.lang.Boolean">
     select car_status from car where id = #{carId}
   </select>
+
+  <select id="selectTotal" resultType="java.lang.Integer">
+    select count(*) from car
+  </select>
+
+  <select id="selectUsingCarTotal" resultType="java.lang.Integer">
+    select count(*) from car where car_status = 0
+  </select>
 </mapper>

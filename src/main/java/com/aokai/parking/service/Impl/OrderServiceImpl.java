@@ -20,6 +20,8 @@ import com.aokai.parking.service.OrderService;
 import com.aokai.parking.utils.BeanUtil;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.ZoneOffset;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
@@ -57,9 +59,9 @@ public class OrderServiceImpl implements OrderService {
         List<OrderInfo> orderInfoList = new ArrayList<>();
 
         // 当天开始
-        LocalDateTime startTime = LocalDateTime.now().with(LocalDate.MIN);
+        LocalDateTime startTime = LocalDateTime.now().with(LocalTime.MIN);
         // 当天的最后一刻
-        LocalDateTime endTime = LocalDateTime.now().with(LocalDate.MAX);
+        LocalDateTime endTime = LocalDateTime.now().with(LocalTime.MAX);
         // 获取当天的车辆订单
         List<Order> orderList = orderMapper.getTodayOrderList(startTime, endTime);
         if (CollectionUtils.isEmpty(orderList)) {

@@ -5,10 +5,12 @@ import com.aokai.parking.dao.GarageMapper;
 import com.aokai.parking.model.dto.GarageInfo;
 import com.aokai.parking.model.qo.garage.InsertGarageReq;
 import com.aokai.parking.model.qo.garage.updateGarageReq;
+import com.aokai.parking.model.vo.TotalCarInfoResp;
 import com.aokai.parking.po.Car;
 import com.aokai.parking.po.Garage;
 import com.aokai.parking.service.GarageService;
 import com.aokai.parking.utils.BeanUtil;
+import com.github.pagehelper.PageInfo;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
@@ -34,16 +36,21 @@ public class GarageServiceImpl implements GarageService {
     private CarMapper carMapper;
 
     @Override
-    public List<GarageInfo> getGarageList() {
-        List<GarageInfo> garageInfoList = new ArrayList<>();
-        // 获取车库列表
+    public PageInfo<GarageInfo> getGarageList() {
+        List<GarageInfo> garageInfoList;
+        // 分页获取车库列表
         List<Garage> garageList = garageMapper.selectAll();
-        if (CollectionUtils.isEmpty(garageList)) {
-            return null;
-        }
-        garageInfoList = BeanUtil.copyPropertiesByFastJson(garageList, GarageInfo.class);
+        PageInfo<Garage> garagePageInfo = new PageInfo<>(garageList);
 
-        return garageInfoList;
+        // 复制车库集合
+        garageInfoList =  BeanUtil.copyPropertiesByFastJson(garagePageInfo.getList(), GarageInfo.class);
+
+        // 转换成分页
+        PageInfo<GarageInfo> garageInfoPageInfo = new PageInfo<>();
+        BeanUtils.copyProperties(garagePageInfo, garageInfoPageInfo);
+        garageInfoPageInfo.setList(garageInfoList);
+
+        return garageInfoPageInfo;
     }
 
     @Override
@@ -95,5 +102,27 @@ public class GarageServiceImpl implements GarageService {
         // 获取具体车库信息
         Garage garage = garageMapper.selectByPrimaryKey(garageId);
         return garage;
+    }
+
+    @Override
+    public TotalCarInfoResp getTotalCarInfo() {
+        TotalCarInfoResp totalCarInfoResp = new TotalCarInfoResp();
+        // 获取车库总数量
+        Integer garageTotalNum = garageMapper.selectTotal();
+
+        // 获取车位总数量
+        Integer carTotalNum = carMapper.selectTotal();
+
+        // 获取已使用的车辆数量
+        Integer usingCarNum = carMapper.selectUsingCarTotal();
+
+        // 空闲的车辆数量
+        Integer usedCarNum = carTotalNum - usingCarNum;
+
+        totalCarInfoResp.setCarTotalNum(carTotalNum);
+        totalCarInfoResp.setGarageTotalNum(garageTotalNum);
+        totalCarInfoResp.setUsedCarNum(usedCarNum);
+        totalCarInfoResp.setUsingCarNum(usingCarNum);
+        return totalCarInfoResp;
     }
 }

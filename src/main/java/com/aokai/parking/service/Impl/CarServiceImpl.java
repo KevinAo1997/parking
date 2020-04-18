@@ -29,7 +29,6 @@ public class CarServiceImpl implements CarService {
     public List<Car> getCarList(Integer garageId) {
          // 根据车库ID获取停车位列表
         List<Car> carList = carMapper.getCarList(garageId);
-        int a= 3;
         if (CollectionUtils.isEmpty(carList)) {
             return null;
         }
@@ -65,7 +64,7 @@ public class CarServiceImpl implements CarService {
     @Override
     public Boolean checkCarStatus(Integer carId) {
         // 检查车位是否已占用
-        return carMapper.checkCarStatus(carId);
+        return ! carMapper.checkCarStatus(carId);
     }
 
     @Override
