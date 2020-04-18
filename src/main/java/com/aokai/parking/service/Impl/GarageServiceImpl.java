@@ -118,11 +118,11 @@ public class GarageServiceImpl implements GarageService {
         Integer usingCarNum = carMapper.selectUsingCarTotal();
 
         // 空闲的车辆数量
-        Integer usedCarNum = carTotalNum - usingCarNum;
+        Integer unUsedCarNum = carTotalNum - usingCarNum;
 
         totalCarInfoResp.setCarTotalNum(carTotalNum);
         totalCarInfoResp.setGarageTotalNum(garageTotalNum);
-        totalCarInfoResp.setUsedCarNum(usedCarNum);
+        totalCarInfoResp.setUnUsedCarNum(unUsedCarNum);
         totalCarInfoResp.setUsingCarNum(usingCarNum);
         return totalCarInfoResp;
     }

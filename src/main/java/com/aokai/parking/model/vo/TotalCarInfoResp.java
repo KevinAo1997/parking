@@ -34,5 +34,5 @@ public class TotalCarInfoResp implements Serializable {
     /**
      * 空闲的车位
      */
-    private Integer usedCarNum;
+    private Integer unUsedCarNum;
 }
