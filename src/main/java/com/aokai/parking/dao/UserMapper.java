@@ -31,7 +31,7 @@ public interface UserMapper extends Mapper<User> {
      * @param status
      * @return
      */
-    Integer updateStatus(@Param("userID") Integer userId, @Param("status") Integer status);
+    Integer updateStatus(@Param("userId") Integer userId, @Param("status") Integer status);
 
     /**
      * 删除用户

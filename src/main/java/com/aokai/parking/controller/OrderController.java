@@ -102,7 +102,6 @@ public class OrderController {
     public Result searchCarOrder(@RequestBody @Validated SearchCarOrderReq searchCarOrderReq) {
         // 搜索车辆
         SearchCarOrderResp searchCarOrderResp = orderService.searchCarOrder(searchCarOrderReq);
-
         return new SuccessResult<>(searchCarOrderResp);
     }
 
