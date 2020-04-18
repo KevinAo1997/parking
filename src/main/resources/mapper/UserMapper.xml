@@ -57,7 +57,7 @@
     select * from user
     <where>
       <if test="username !=null">
-        and username like #{userName}
+        and username like #{username}
       </if>
       <if test="code != null">
         and code like #{code}
