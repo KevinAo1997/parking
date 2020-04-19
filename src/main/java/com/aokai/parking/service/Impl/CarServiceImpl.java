@@ -2,7 +2,6 @@ package com.aokai.parking.service.Impl;
 
 import com.aokai.parking.dao.CarMapper;
 import com.aokai.parking.dao.GarageMapper;
-import com.aokai.parking.enums.CarTypeEnum;
 import com.aokai.parking.model.qo.car.InsertCarReq;
 import com.aokai.parking.model.qo.car.UpdateCarReq;
 import com.aokai.parking.po.Car;
@@ -42,10 +41,10 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public Boolean checkCarName(String carName, Integer garageId) {
+    public Boolean checkCarName(String carName, Integer id, Integer garageId) {
         // 检查车位名称是否存在
         Car car = carMapper.checkCarName(carName, garageId);
-        return car != null;
+        return car != null && ! car.getId().equals(id);
     }
 
     @Override
@@ -79,7 +78,7 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public Boolean deleteCar(Integer garageId, Integer carId) {
+    public Boolean deleteCar(Integer carId, Integer garageId) {
         // 删除车位信息
         Integer delete = carMapper.deleteCar(carId);
 

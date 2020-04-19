@@ -3,7 +3,6 @@ package com.aokai.parking.controller;
 import com.aokai.parking.enums.ApplicationEnum;
 import com.aokai.parking.model.qo.car.DeleteCarReq;
 import com.aokai.parking.model.qo.car.GetCarListReq;
-import com.aokai.parking.model.qo.car.GetIndexCarListReq;
 import com.aokai.parking.model.qo.car.InsertCarReq;
 import com.aokai.parking.model.qo.car.UpdateCarReq;
 import com.aokai.parking.model.vo.result.FailResult;
@@ -69,7 +68,7 @@ public class CarController {
     @ResponseBody
     public Result insertCar(@RequestBody @Validated InsertCarReq insertCarReq) {
         // 检查车位名称是否存在
-        Boolean isCarName = carService.checkCarName(insertCarReq.getCarName(),insertCarReq.getGarageId());
+        Boolean isCarName = carService.checkCarName(insertCarReq.getCarName(),0,insertCarReq.getGarageId());
         if (isCarName) {
             return new FailResult<>(ApplicationEnum.NAME_REPETITION);
         }
@@ -90,7 +89,7 @@ public class CarController {
     @ResponseBody
     public Result updateCar(@RequestBody @Validated UpdateCarReq updateCarReq) {
         // 检查车位名称是否存在
-        Boolean isCarName = carService.checkCarName(updateCarReq.getCarName(),updateCarReq.getGarageId());
+        Boolean isCarName = carService.checkCarName(updateCarReq.getCarName(),updateCarReq.getId(),updateCarReq.getGarageId());
         if (isCarName) {
             return new FailResult<>(ApplicationEnum.NAME_REPETITION);
         }

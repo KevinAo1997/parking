@@ -142,21 +142,23 @@ public class OrderServiceImpl implements OrderService {
         // 当前时间
         LocalDateTime localDateTime = LocalDateTime.now();
         // 计算停车时间
-        long time =ChronoUnit.HOURS
+        Long time =ChronoUnit.MINUTES
                 .between(order.getStarttime(), localDateTime);
+        Double times = (double) Math.round(time.doubleValue()/60 * 100) / 100;
         // 计算花费
-        Double cost = time*car.getCarPrice();
+//        Double costs = times*(car.getCarPrice()/car.getCarPriceTime());
+        Double cost = (double) Math.round(times*(car.getCarPrice()/car.getCarPriceTime()) * 100) / 100;
         // 车辆车库修改订单
         Order newOrder = new Order();
         newOrder.setStatus(1);
-        newOrder.setTime((double) time);
+        newOrder.setTime(times);
         newOrder.setCost(cost);
         newOrder.setId(order.getId());
         newOrder.setEndtime(localDateTime);
         Integer updateOrder = orderMapper.updateByPrimaryKeySelective(newOrder);
 
         outCarOrderResp.setCost(cost);
-        outCarOrderResp.setTime((double) time);
+        outCarOrderResp.setTime(times);
         outCarOrderResp.setProvince(updateCarOrderReq.getProvince());
         outCarOrderResp.setCarnumber(updateCarOrderReq.getCarnumber());
         outCarOrderResp.setEndtime(localDateTime);

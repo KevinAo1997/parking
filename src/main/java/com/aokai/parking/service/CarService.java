@@ -23,10 +23,11 @@ public interface CarService {
     /**
      * 检查车位名称是否存在
      * @param carName
+     * @param id
      * @param garageId
      * @return
      */
-    Boolean checkCarName(String carName, Integer garageId);
+    Boolean checkCarName(String carName, Integer id, Integer garageId);
 
     /**
      * 新增车位
@@ -56,5 +57,5 @@ public interface CarService {
      * @param carId
      * @return
      */
-    Boolean deleteCar(Integer garageId, Integer carId);
+    Boolean deleteCar(Integer carId, Integer garageId);
 }
